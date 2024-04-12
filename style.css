@@ -1,0 +1,108 @@
+:root {
+  background-color: darkslategrey;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 200;
+  color: white;
+}
+
+button {
+  background-color: cadetblue;
+}
+
+button:hover {
+  background-color: aqua;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 70px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent);
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+}
+
+.container {
+  border: solid 1px aqua;
+  height: 100%;
+  width: 97%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-title {
+  border: solid 1px aqua;
+}
+
+nav {
+  display: flex;
+  width: 20%;
+  border: solid 1px aqua;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  paddding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* nav ul li {
+} */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #270e48, #2c1656);
+}
+
+.hero-text {
+  width: 50vw;
+  border: solid 2px aqua;
+  align-items: center;
+}
+
+.pug-astronaut {
+  height: 450px;
+  width: 300px;
+  /* background-color: antiquewhite; */
+}
+
+.work-section {
+  background-color: dimgray;
+  min-height: 100vh;
+}
+
+.work {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5%;
+  min-height: 95vh;
+  width: 95vw;
+  align-self: center;
+  margin: 2.5%;
+}
+
+.contact-section {
+  min-height: 100vh;
+}
