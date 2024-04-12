@@ -1,5 +1,8 @@
 :root {
   background-color: darkslategrey;
+  --primary: #00ffff;
+  --secondary: #2bff00;
+  --cta: #e5ff00;
 }
 
 *,
@@ -17,15 +20,25 @@ body {
 h1 {
   font-size: 2rem;
   font-weight: 200;
-  color: white;
+  color: var(--primary);
+}
+
+h2 {
+  color: var(--primary);
 }
 
 button {
-  background-color: cadetblue;
+  background-color: var(--cta);
+  border-radius: 4px;
+  text-transform: uppercase;
+  padding: calc(0.75rem + 2px) calc(1.1rem + 2px);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 500ms ease;
 }
 
 button:hover {
-  background-color: aqua;
+  background-color: var(--secondary);
 }
 
 header {
@@ -34,6 +47,7 @@ header {
   top: 0;
   height: 70px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent);
+  z-index: 2;
   /* display: flex;
   align-items: center;
   justify-content: space-between; */
@@ -56,13 +70,13 @@ header {
 nav {
   display: flex;
   width: 20%;
-  border: solid 1px aqua;
+  border: solid 1px #00ffff;
 }
 
 nav ul {
   list-style: none;
   margin: 0;
-  paddding: 0;
+  padding: 0;
   display: flex;
   justify-content: space-around;
 }
@@ -70,24 +84,76 @@ nav ul {
 /* nav ul li {
 } */
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(180deg, #270e48, #2c1656);
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 20px;
+  /* display: flex;
+  align-items: center; */
+  background: linear-gradient(180deg, #270e48, #4b1aa7);
 }
 
-.hero-text {
-  width: 50vw;
-  border: solid 2px aqua;
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transform: translateZ(-20px) scale(2);
+}
+
+.pug-louis {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transform: translateZ(10px) scale(0.5);
+}
+
+/* .left-text {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+} */
+
+.hero-text {
+  border: solid 2px aqua;
+  width: 40%;
+  text-align: center;
+}
+
+/* .right-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 2px aqua;
+  width: 50%;
+  height: 100%;
 }
 
 .pug-astronaut {
   height: 450px;
   width: 300px;
-  /* background-color: antiquewhite; */
-}
+  overflow: hidden;
+  border: solid 2px aqua;
+  display: flex;
+  align-items: center;
+  background-color: antiquewhite;
+} */
 
 .work-section {
   background-color: dimgray;
@@ -100,7 +166,7 @@ nav ul {
   min-height: 95vh;
   width: 95vw;
   align-self: center;
-  margin: 2.5%;
+  /* margin: 2.5%; */
 }
 
 .contact-section {
