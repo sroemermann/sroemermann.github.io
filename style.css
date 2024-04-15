@@ -54,7 +54,7 @@ header {
 }
 
 .container {
-  border: solid 1px aqua;
+  /* border: solid 1px aqua; */
   height: 100%;
   width: 97%;
   margin: 0 auto;
