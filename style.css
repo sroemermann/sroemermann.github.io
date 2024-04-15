@@ -64,13 +64,13 @@ header {
 }
 
 .page-title {
-  border: solid 1px aqua;
+  /* border: solid 1px aqua; */
 }
 
 nav {
   display: flex;
   width: 20%;
-  border: solid 1px #00ffff;
+  /* border: solid 1px #00ffff; */
 }
 
 nav ul {
@@ -131,7 +131,7 @@ nav ul {
 } */
 
 .hero-text {
-  border: solid 2px aqua;
+  /* border: solid 2px aqua; */
   width: 40%;
   text-align: center;
 }
