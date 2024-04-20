@@ -105,9 +105,7 @@ button:hover {
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 10px;
-  /* display: flex;
-    align-items: center; */
-  background: linear-gradient(180deg, #270e48, #3c118b);
+  background: linear-gradient(180deg, #1d0a36, #29036e);
 }
 
 /* ============
@@ -120,13 +118,13 @@ button:hover {
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100;
   transform-style: preserve-3d;
   z-index: -1;
 }
 
 .background,
-.louis,
-.stars {
+.louis {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -135,13 +133,13 @@ button:hover {
 }
 
 .background {
-  transform: translateZ(-10px) scale(2);
+  transform: translateZ(-10px) scale(3);
 }
 
 .louis {
   top: 5%;
-  left: -12%;
-  transform: translateZ(-5px) scale(1.5);
+  left: -3%;
+  transform: translateZ(5px) scale(0.5);
 }
 
 @media screen and (max-width: 800px) {
@@ -152,11 +150,11 @@ button:hover {
 }
 
 .stars {
-  animation-name: stars-rotate;
-  animation-duration: 500000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  transform-origin: 50% 20%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform-origin: 50% 50%;
+  animation: stars-rotate 500000ms linear infinite;
 }
 
 @keyframes stars-rotate {
@@ -168,12 +166,21 @@ button:hover {
   }
 }
 
+.stars-bg {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
 .stars-bg-2 {
-  animation-name: stars2;
-  animation-duration: 5000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  animation: stars2 5000ms infinite alternate ease-in-out;
 }
 
 @keyframes stars2 {
@@ -192,7 +199,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 999;
+  z-index: 1;
+  transform: translateZ(-5px) scale(1.5);
 }
 
 @media (min-width: 800px) {
