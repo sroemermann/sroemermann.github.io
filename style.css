@@ -100,10 +100,6 @@ button:hover {
   background-color: var(--primary);
 }
 
-/* ============
-   HERO SECTION
-   ============ */
-
 .wrapper {
   height: 100vh;
   overflow-y: auto;
@@ -113,6 +109,10 @@ button:hover {
     align-items: center; */
   background: linear-gradient(180deg, #270e48, #3c118b);
 }
+
+/* ============
+   HERO SECTION
+   ============ */
 
 .hero {
   position: relative;
@@ -125,7 +125,8 @@ button:hover {
 }
 
 .background,
-.louis {
+.louis,
+.stars {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -169,9 +170,10 @@ button:hover {
 
 .stars-bg-2 {
   animation-name: stars2;
-  animation-duration: 500ms;
+  animation-duration: 5000ms;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  animation-direction: alternate;
 }
 
 @keyframes stars2 {
@@ -239,7 +241,7 @@ button:hover {
    ============ */
 
 .work-section {
-  background-color: dimgray;
+  background-color: #0b0316;
   min-height: 100vh;
   padding: 2rem;
 }
