@@ -3,6 +3,7 @@
   --primary: #00ffff;
   --secondary: #2bff00;
   --cta: #e5ff00;
+  --dark-color: #14022d;
 }
 
 *,
@@ -38,9 +39,15 @@ h2 {
   margin: 0;
 }
 
+@media screen and (max-width: 1200px) {
+  h2 {
+    font-size: 4.5rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   h2 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 
@@ -102,17 +109,18 @@ nav ul {
 
 button {
   /* background-color: var(--cta); */
-  position: relative;
-  border-radius: 4px;
+  /* position: relative; */
+  /* border-radius: 4px; */
   text-transform: uppercase;
-  padding: calc(1rem + 2px) calc(1.6rem + 2px);
   font-family: "Jersey 25";
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 800;
-  color: #14022d;
+  color: var(--dark-color);
   transition: all 500ms ease;
-  border: solid 0.25rem var(--cta);
+  /* border: solid 0.25rem var(--cta); */
+  border: none;
   margin: 1rem 1rem 0 0;
+  width: 13rem;
   /* box-shadow: inset 5em 1em rgba(0, 0, 0, 0.1); */
 }
 
@@ -120,6 +128,7 @@ button::before {
   position: relative;
   content: "";
   z-index: 30;
+  background: #00ffff;
   left: 0;
   top: 20;
   width: 20px;
@@ -128,12 +137,12 @@ button::before {
 }
 
 button:hover {
-  background: #1d0a36;
+  background: var(--dark-color);
   color: var(--cta);
 }
 
 .hero-button {
-  background: linear-gradient(0deg, var(--cta), #adba36);
+  /* background: linear-gradient(0deg, var(--cta), #adba36); */
 }
 
 .hero-button:hover {
@@ -142,6 +151,18 @@ button:hover {
 
 .hero-buttons {
   display: flex;
+}
+
+.hero-button-1 {
+  clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+  padding: 1rem 2rem 1rem 0;
+  background: linear-gradient(0deg, var(--cta), #adba36);
+}
+
+.hero-button-2 {
+  margin-left: -2em;
+  padding: 1rem 0 1rem 2rem;
+  clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .wrapper {
@@ -166,15 +187,24 @@ button:hover {
    HERO SECTION
    ============ */
 
+/* HERO BACKGROUND */
+
 .hero {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100;
   transform-style: preserve-3d;
   z-index: -1;
+}
+
+@media screen and (min-width: 800px) {
+  .hero {
+    flex-direction: row-reverse;
+  }
 }
 
 .background {
@@ -187,40 +217,6 @@ button:hover {
 
 .background {
   transform: translateZ(-15px) scale(4);
-}
-
-.louis {
-  position: relative;
-  top: 3rem;
-  left: 10rem;
-  transform: translateZ(2px) scale(1);
-  /* transform-origin: 50% 50%; */
-  /* animation: louis-float 20000ms infinite alternate linear; */
-}
-
-@media screen and (min-width: 800px) {
-  .louis {
-    /* position: relative; */
-    /* right: 10%; */
-  }
-}
-
-@keyframes louis-float {
-  0% {
-    transform: rotate(-5deg);
-  }
-  25% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: rotate(5deg);
-  }
-  75% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: rotate(-5deg);
-  }
 }
 
 .stars {
@@ -266,37 +262,68 @@ button:hover {
   }
 }
 
-.text-wrapper {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  top: 2rem;
-  /* z-index: 10; */
-  transform: translateZ(-5px) scale(1.5);
+/* HERO FOREGROUND */
+
+.louis {
+  position: relative;
+  margin: 2em auto;
+  /* transform-origin: 50% 50%; */
+  /* animation: louis-float 20000ms infinite alternate linear; */
 }
 
-@media (min-width: 800px) {
-  .text-wrapper {
-    flex-direction: row;
+@media screen and (min-width: 800px) {
+  .louis {
+    /* top: 3rem;
+    left: 14rem; */
+    transform: translateZ(2px) scale(1);
+  }
+}
+
+@keyframes louis-float {
+  0% {
+    transform: rotate(-5deg);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: rotate(-5deg);
   }
 }
 
 .hero-text {
-  /* border: solid 2px aqua; */
-  /* width: 30%; */
-  text-align: left;
-  /* margin-left: 20%; */
-  /* z-index: 10; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  /* justify-content: space-evenly; */
+  text-align: center;
+  top: 2rem;
+  transform: translateZ(-5px) scale(1.5);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 971px) {
   .hero-text {
     width: 40%;
-    margin-left: 10%;
+    align-items: flex-start;
+    /* margin: 10% 0 auto 0; */
+    text-align: left;
   }
+}
+
+/* ===========
+   BIO SECTION
+   =========== */
+
+.bio {
+  background-color: var(--dark-color);
 }
 
 /* ============
@@ -304,20 +331,28 @@ button:hover {
    ============ */
 
 .broadway-perio-section {
-  background-color: #0b0316;
+  background-color: var(--dark-color);
   padding: 2rem;
 }
 
 .broadway-perio {
   height: 100%;
   width: 100%;
-  background-color: #270e48;
+  /* background-color: #270e48; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   border-radius: 40px;
-  justify-content: space-evenly;
+  justify-content: center;
+  padding: 5%;
+  background: radial-gradient(
+      111% 111% at 74.29% -11%,
+      #a93300 0%,
+      #005570 100%
+    ),
+    linear-gradient(127.43deg, #00d5c8 0%, #2200aa 100%);
+  background-blend-mode: difference, normal;
 }
 
 @media screen and (min-width: 800px) {
@@ -330,9 +365,10 @@ button:hover {
   text-align: center;
   top: 0;
   z-index: 50;
+  margin: 5%;
 }
 
-@media screen and (min-width: 1414px) {
+@media screen and (min-width: 1789px) {
   .work-description {
     text-align: left;
   }
@@ -340,7 +376,8 @@ button:hover {
 
 .computer {
   position: relative;
-  width: clamp(300px, 70vw, 900px);
+  width: 80vw;
+  top: 0;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -349,30 +386,47 @@ button:hover {
 }
 
 .computer::before {
-  content: "";
   position: absolute;
-  background: red;
-  top: 25%;
-  left: 20%;
+  content: "";
+  background: black;
+  top: 30%;
+  left: 30%;
   width: 30%;
   height: 20%;
-  box-shadow: -4em -2em 10em #fff98b;
+  box-shadow: -4em -2em 6em #fff98b;
 }
 
 .computer::after {
-  content: "";
   position: absolute;
-  background: red;
-  bottom: 30%;
-  right: 20%;
+  content: "";
+  background: black;
+  bottom: 40%;
+  right: 30%;
   width: 30%;
   height: 20%;
   box-shadow: 4em 2em 6em #fff98b;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 800px) {
   .computer {
-    width: 80vw;
+    width: clamp(300px, 70vw, 900px);
+    top: -10%;
+  }
+
+  .computer::before {
+    top: 25%;
+    left: 20%;
+    width: 30%;
+    height: 20%;
+    box-shadow: -4em -2em 10em #fff98b;
+  }
+
+  .computer::after {
+    bottom: 30%;
+    right: 20%;
+    width: 30%;
+    height: 20%;
+    box-shadow: 4em 2em 6em #fff98b;
   }
 }
 
@@ -388,7 +442,7 @@ button:hover {
 
 .bevel {
   display: flex;
-  background: #14022d;
+  background: var(--dark-color);
   overflow: auto;
   width: 100%;
   height: 84%;
@@ -413,7 +467,7 @@ button:hover {
   width: 5%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: #14022d;
+  background: var(--dark-color);
   margin: 3% auto;
 }
 
@@ -436,7 +490,7 @@ button:hover {
   /* border: solid 2px #ff7700; */
   /* transform: perspective(2em) rotateX(1deg); */
   clip-path: polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%);
-  background: linear-gradient(#b297ce 20%, #ecd8ff 70%);
+  background: linear-gradient(#b297ce 10%, #ecd8ff 65%);
 }
 
 .stand-base {
@@ -449,7 +503,7 @@ button:hover {
   /* border: solid 2px #ff7700; */
   /* transform: perspective(2em) rotateX(35deg); */
   clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
-  background: linear-gradient(#ecd8ff 30%, #b297ce);
+  background: linear-gradient(#ecd8ff 20%, #b297ce 90%);
   z-index: 1;
   /* box-shadow: 0 2px 0 -1px #14022d; */
 }
@@ -457,7 +511,7 @@ button:hover {
 .stand-bottom {
   width: 158%;
   height: 6%;
-  background: linear-gradient(90deg, rgb(116, 38, 189) 30%, #6408c7);
+  background: linear-gradient(90deg, rgb(127, 80, 171) 30%, #8634dd);
   position: absolute;
   bottom: -5%;
   left: -29%;
@@ -472,6 +526,10 @@ button:hover {
   min-height: 70vh;
   flex: 1;
 } */
+
+.guitar-store {
+  background: #005570;
+}
 
 /* ===============
    CONTACT SECTION
