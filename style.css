@@ -1,9 +1,9 @@
 :root {
-  background-color: #14022d;
-  --primary: #00ffff;
+  background-color: #0d102d;
+  --primary: #53ffff;
   --cta: #e8fa46;
-  --bg-color: #14022d;
-  --dark-color: #14022d;
+  --bg-color: #04072c;
+  --dark-color: #04072c;
   --body-color: white;
 
   /* bg gradients */
@@ -16,15 +16,17 @@
 }
 
 :root.light-mode {
-  --primary: #044f4f;
+  --primary: #0a0030;
+  --cta: #decc00;
   --body-color: #14022d;
   --bg-color: #f5f5f5;
+  --dark-color: #30273a;
 
   /* bg gradients */
-  --grad1: #a93300;
-  --grad2: #005570;
-  --grad3: #00d5c8;
-  --grad4: #2200aa;
+  --grad1: #762100;
+  --grad2: #6e7000;
+  --grad3: #92fcff;
+  --grad4: #ffcfc1;
   --grad5: #dad2e5;
   --grad6: #b9e7f6;
 }
@@ -140,6 +142,12 @@ a:hover {
   margin: 0.3rem 0.5rem 0.3rem 0;
 }
 
+@media screen and (min-width: 800px) {
+  .skill {
+    font-size: 1rem;
+  }
+}
+
 /* section {
   height: 100vh;
   scroll-snap-align: start;
@@ -153,7 +161,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  height: 70px;
+  height: 4rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent);
   z-index: 101;
   display: flex;
@@ -165,7 +173,7 @@ header {
 
 @media screen and (min-width: 800px) {
   header {
-    padding: 0 2rem;
+    padding: 0 3rem;
   }
 }
 
@@ -270,7 +278,7 @@ button {
   /* font-style: italic;
   font-weight: 700; */
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: var(--dark-color);
   transition: all 500ms ease;
   padding: 0.5rem 1.2rem;
@@ -290,7 +298,7 @@ button:hover {
 }
 
 .hero-button {
-  font-size: 2rem;
+  font-size: 1.6rem;
   /* clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%); */
   padding: 0.8rem 2rem 0.8rem 2rem;
   background: var(--cta);
@@ -312,7 +320,7 @@ button:hover {
 
 @media screen and (min-width: 600px) {
   .hero-button {
-    font-size: 1.6rem;
+    font-size: 2rem;
     /* width: 13rem; */
     /* margin: 0 -0.6rem; */
   }
@@ -493,29 +501,22 @@ button:hover {
    BIO SECTION
    =========== */
 
-.wave {
-  /* border: #00ffff solid 2px; */
-  position: relative;
-  bottom: -2rem;
-  width: 110vw;
+.wave-wrapper {
+  width: 100vw;
   filter: drop-shadow(-2em -2em 0.25em rgba(9, 164, 178, 0.2));
-  /* height: 100vh; */
-  /* background-color: var(--dark-color); */
-  /* mask-image: url("img/bg/wave.png"); */
-  /* -webkit-mask-size: contain; */
-  /* -webkit-mask-repeat: no-repeat; */
-  /* z-index: 300; */
+  position: relative;
+  bottom: 0;
 }
 
 .wave-mask {
-  width: 100vw;
+  width: 100%;
   position: relative;
-  bottom: -4rem;
-  height: 20rem;
-  filter: drop-shadow(-2em -2em 0.25em rgba(9, 164, 178, 0.2));
+  bottom: -1rem;
+  height: 18rem;
   background-color: var(--bg-color);
   mask-image: url("https://raw.githubusercontent.com/sroemermann/sroemermann.github.io/main/img/bg/wave.png");
   mask-repeat: no-repeat;
+  mask-size: 100% auto;
 }
 
 .about-me {
@@ -594,7 +595,7 @@ button:hover {
 .work-section {
   padding: 3rem 0;
   height: 100%;
-  border-radius: 40px;
+  border-radius: 30px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -615,7 +616,7 @@ button:hover {
 @media screen and (min-width: 1000px) {
   .work-section {
     flex-direction: row;
-    /* border-radius: 40px; */
+    border-radius: 40px;
   }
 }
 
@@ -709,7 +710,7 @@ button:hover {
 
 .bevel {
   display: flex;
-  background: #14022d;
+  background: var(--dark-color);
   overflow: auto;
   width: 100%;
   height: 84%;
@@ -735,7 +736,7 @@ button:hover {
   width: 5%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: #14022d;
+  background: var(--dark-color);
   margin: 3% auto;
 }
 
@@ -805,10 +806,15 @@ button:hover {
    =============== */
 
 .contact-section {
-  /* min-height: 100vh; */
-  /* background-color: #270e48; */
-  height: 100vh;
   scroll-snap-align: start;
+  min-height: 60vh;
   padding: 1rem;
   background-color: var(--bg-color);
+}
+
+@media screen and (min-width: 800px) {
+  .contact-section {
+    padding: 2rem;
+    height: 100vh;
+  }
 }
