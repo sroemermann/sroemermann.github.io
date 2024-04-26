@@ -7,35 +7,36 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap');
-        </style>
-        
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+    </style>
         
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="page-title">
-                <h1>Steven Roemermann</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li>Email</li>
-                    <li>LinkedIn</li>
-                </ul>
-                <div id="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-            </nav>
+        <div class="page-title">
+            <h1><a href="#hero">Steven Roemermann</a></h1>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
     </header>
 
 
-
     <div class="wrapper">
+
         <!-- HERO SECTION -->
-            <div class="hero">
+            <div class="hero" id="hero">
                 <div class="background">
                     <div class="stars">
                         <img src="img/bg/stars-bg-1.png" alt="" class="stars-bg">
@@ -44,11 +45,10 @@
                 </div>  
                 <img class="louis" src="img/pug/louis.png" alt="pug wearing an astronaut helmet floating through space">
                 <div class="hero-text">
-                    <h2>Hello! I'm Steven.</h2>
-                    <p class="hero-paragraph">I am a developer with a design background. Check out some of my work below!</p>
+                    <h2 class="primary">Hello! I'm Steven.</h2>
+                    <p class="hero-paragraph">I'm a developer and designer. Check out some of my work below!</p>
                     <div class="hero-buttons">
-                        <button class="hero-button">Email</button>
-                        <button class="hero-button">LinkedIn</button>
+                        <a href="#contact"><button class="hero-button">Contact me</button></a>
                     </div>
                 </div>
             </div>
@@ -56,33 +56,39 @@
         <!-- BIO SECTION -->  
         <!-- <div class="wave"></div> -->
         <img src="img/bg/wave.png" alt="" class="wave">
+
         <div class="about-me" id="about">
-            <div class="bio">
+            <div class="bio-section">
                 <div class="section-header">
-                    <h2>About me</h2>
+                    <h2 class="primary">About me</h2>
                 </div>
-                <div class="column">
-                    <p>I am a web developer with over a decade of experience in UI design and marketing. I design and build websites that are functional and accessible.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa quos obcaecati sint totam ex odio reiciendis aliquid vero quia, nulla voluptate commodi, nihil illum corporis.</p>
-                </div>
-                <div class="column">
-                    <p>Aut, sed necessitatibus! Laborum ipsum voluptate voluptatem iure reprehenderit laboriosam non, veniam debitis exercitationem asperiores deserunt cupiditate aliquam delectus vero quasi quia tenetur vel iusto.</p>
-                    <p>Enim temporibus dolor esse veniam id eligendi culpa omnis facere obcaecati, ipsam quaerat quasi debitis sed! Ut maiores dolor repellat laudantium? Ipsum nisi alias incidunt.</p>
-                    <p>Accusantium quis quo quibusdam sed, recusandae iste eius qui ducimus possimus repudiandae pariatur alias? Provident nam, totam reprehenderit hic laboriosam autem officia nulla error eveniet!</p>
+                <div class="bio">
+                    <div class="column">
+                        <p>I am a web developer with over a decade of experience in UI design and marketing. I design and build websites that are functional and accessible.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa quos obcaecati sint totam ex odio reiciendis aliquid vero quia, nulla voluptate commodi, nihil illum corporis.</p>
+                    </div>
+                    <div class="column">
+                        <p>Aut, sed necessitatibus! Laborum ipsum voluptate voluptatem iure reprehenderit laboriosam non, veniam debitis exercitationem asperiores deserunt cupiditate aliquam delectus vero quasi quia tenetur vel iusto.</p>
+                        <p>Enim temporibus dolor esse veniam id eligendi culpa omnis facere obcaecati, ipsam quaerat quasi debitis sed! Ut maiores dolor repellat laudantium? Ipsum nisi alias incidunt.</p>
+                        <p>Accusantium quis quo quibusdam sed, recusandae iste eius qui ducimus possimus repudiandae pariatur alias? Provident nam, totam reprehenderit hic laboriosam autem officia nulla error eveniet!</p>
+                    </div>
+                    <div class="column">
+                        <p>I am a web developer with over a decade of experience in UI design and marketing. I design and build websites that are functional and accessible.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa quos obcaecati sint totam ex odio reiciendis aliquid vero quia, nulla voluptate commodi, nihil illum corporis.</p>
+                    </div>
                 </div>
             </div>
-            
-            
         </div>
 
         <!-- WORK SECTION -->
-        <section class="broadway-perio-section">
-            <div class="website-section">
+        <div class="broadway-perio-section" id="work">
+            <div class="work-section odd">
                 <div class="work-description">
                     <p class="work-type">Website</p>
                     <h2>Broadway Perio</h2>
-                    <p class="skills"><span class="skill">Branding</span><span class="skill">UI design</span><span class="skill">Javascript</span></p>
-                    <button type="button">Check it out!</button>
+                    <p class="skills"><span class="skill">Branding</span><span class="skill">Design</span><span class="skill">Javascript</span><span class="skill">Wordpress</span></p>
+                    <a href="https://broadwayperio.com" target="_blank"><button type="button">Check it out</button></a>
+                    
                 </div>
                 <div class="computer">
                     <div class="monitor">
@@ -98,15 +104,15 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
         
         <section class="guitar-store-section">
-            <div class="website-section">
+            <div class="work-section even">
                 <div class="work-description">
                     <p class="work-type">Java application</p>
                     <h2>Guitar Store</h2>
                     <p class="skills"><span class="skill">Java</span><span class="skill">SQL</span><span class="skill">UI Design</span></p>
-                    <button>Check it out!</button>
+                    <button>Check it out</button>
                 </div>
                 <div class="computer">
                     <div class="monitor">
@@ -127,14 +133,17 @@
         </section>
 
         <!-- CONTACT SECTION -->
-        <section>
-            <div class="contact-section">
+        <!-- <div class=""> -->
+            <div class="contact-section" id="contact">
                 <div class="contact">
-                    <h2>Contact me</h2>
-        
+                    <h2 class="primary">Contact me</h2>
+                    <div class="contact-info">
+                        <p>Email: roemermann.steven@gmail.com</p>
+                        <p>LinkedIn: linkedin.com/in/sroemermann</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        <!-- </section> -->
 
         <!-- <div class="left-text">
             
@@ -149,12 +158,11 @@
     </div>
 
     <div id="mobile-nav">
-        <div class="mobile-nav-list">
-            <ul>
-                <li><a href="#about">About me</a></li>
-                <li>My work</li>
-                <li>Contact me</li>
-                <li>LinkedIn</li>
+        <div>
+            <ul class="mobile-nav-list">
+                <li><a href="#about" class="mobile-nav-link">About me</a></li>
+                <li><a href="#work" class="mobile-nav-link">My work</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact me</a></li>
             </ul>
         </div>
 
