@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Roemermann</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap');
         </style>
@@ -17,14 +18,20 @@
             <div class="page-title">
                 <h1>Steven Roemermann</h1>
             </div>
-            <!-- <nav>
+            <nav>
                 <ul>
-                    <li>Work</li>
-                    <li>Contact</li>
+                    <li>Email</li>
+                    <li>LinkedIn</li>
                 </ul>
-            </nav> -->
+                <div id="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </nav>
         </div>
     </header>
+
+
 
     <div class="wrapper">
         <!-- HERO SECTION -->
@@ -47,7 +54,9 @@
             </div>
         
         <!-- BIO SECTION -->  
-        <div class="about-me">
+        <!-- <div class="wave"></div> -->
+        <img src="img/bg/wave.png" alt="" class="wave">
+        <div class="about-me" id="about">
             <div class="bio">
                 <div class="section-header">
                     <h2>About me</h2>
@@ -70,6 +79,7 @@
         <section class="broadway-perio-section">
             <div class="website-section">
                 <div class="work-description">
+                    <p class="work-type">Website</p>
                     <h2>Broadway Perio</h2>
                     <p class="skills"><span class="skill">Branding</span><span class="skill">UI design</span><span class="skill">Javascript</span></p>
                     <button type="button">Check it out!</button>
@@ -93,6 +103,7 @@
         <section class="guitar-store-section">
             <div class="website-section">
                 <div class="work-description">
+                    <p class="work-type">Java application</p>
                     <h2>Guitar Store</h2>
                     <p class="skills"><span class="skill">Java</span><span class="skill">SQL</span><span class="skill">UI Design</span></p>
                     <button>Check it out!</button>
@@ -134,6 +145,18 @@
                 <img class="pug-louis" src="img/pug/pug-astronaut.png" alt="pug wearing an astronaut helmet floating through space">
             </div>
         </div> -->
+
+    </div>
+
+    <div id="mobile-nav">
+        <div class="mobile-nav-list">
+            <ul>
+                <li><a href="#about">About me</a></li>
+                <li>My work</li>
+                <li>Contact me</li>
+                <li>LinkedIn</li>
+            </ul>
+        </div>
 
     </div>
 
