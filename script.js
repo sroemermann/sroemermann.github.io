@@ -15,4 +15,31 @@ links.forEach(l => {
 });
 });
 
-// Scroll ease
+// Light mode toggle
+
+const mode = document.getElementById("mode");
+const modeMobile = document.getElementById("light-mode-mobile");
+const root = document.documentElement;
+
+mode.addEventListener("click", () => {
+    root.classList.toggle("light-mode");
+    if (mode.innerHTML === "Light") {
+        mode.innerHTML = "Dark";
+        modeMobile.innerHTML = "Dark mode";
+    } else {
+        mode.innerHTML = "Light";
+        modeMobile.innerHTML = "Light mode";
+    }
+    
+});
+
+modeMobile.addEventListener("click", () => {
+    root.classList.toggle("light-mode");
+    if (modeMobile.innerHTML === "Light mode") {
+        modeMobile.innerHTML = "Dark mode";
+        mode.innerHTML = "Dark";
+    } else {
+        modeMobile.innerHTML = "Light mode";
+        mode.innerHTML = "Light";
+    }
+});

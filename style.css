@@ -1,9 +1,32 @@
 :root {
   background-color: #14022d;
   --primary: #00ffff;
-  --secondary: #2bff00;
   --cta: #e8fa46;
+  --bg-color: #14022d;
   --dark-color: #14022d;
+  --body-color: white;
+
+  /* bg gradients */
+  --grad1: #a93300;
+  --grad2: #005570;
+  --grad3: #00d5c8;
+  --grad4: #2200aa;
+  --grad5: #1f0247;
+  --grad6: #005570;
+}
+
+:root.light-mode {
+  --primary: #044f4f;
+  --body-color: #14022d;
+  --bg-color: #f5f5f5;
+
+  /* bg gradients */
+  --grad1: #a93300;
+  --grad2: #005570;
+  --grad3: #00d5c8;
+  --grad4: #2200aa;
+  --grad5: #b79fd8;
+  --grad6: #93d0e2;
 }
 
 *,
@@ -20,7 +43,7 @@ html {
 
 body {
   margin: 0;
-  color: white;
+  color: var(--body-color);
   font-family: "Space Mono", sans-serif;
   font-size: 1rem;
 }
@@ -36,9 +59,9 @@ h1 {
   color: var(--primary);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   h1 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -68,7 +91,7 @@ a {
 }
 
 a:hover {
-  color: white;
+  color: var(--body-color);
 }
 
 .page-title {
@@ -110,8 +133,8 @@ a:hover {
 .skill {
   text-transform: uppercase;
   font-size: 0.8rem;
-  border: #00d5c8 solid 0.1rem;
-  color: #00d5c8;
+  border: var(--primary) solid 0.1rem;
+  color: var(--primary);
   border-radius: 6px;
   padding: 0.3rem 0.5rem;
   margin: 0.3rem 0.5rem 0.3rem 0;
@@ -137,6 +160,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0 2rem;
 }
 
 nav {
@@ -164,18 +188,17 @@ nav ul li {
   margin-left: 2rem;
   /* text-decoration: underline; */
   /* transition: all 500ms ease; */
-  color: #00ffff;
   /* cursor: pointer; */
 }
 
 nav ul li a {
   transition: all 500ms ease;
-  color: #00ffff;
+  color: var(--primary);
   cursor: pointer;
 }
 
 nav ul li a:hover {
-  color: white;
+  color: var(--body-color);
   filter: drop-shadow(0 0 0.2em white);
   transition: all 500ms ease;
 }
@@ -193,7 +216,7 @@ nav ul li a:hover {
 #hamburger .line {
   width: 50px;
   height: 2.5px;
-  background-color: #00ffff;
+  background-color: var(--primary);
   border-radius: 10%;
 }
 
@@ -206,20 +229,21 @@ nav ul li a:hover {
   flex-direction: column;
   justify-content: center;
   z-index: 100;
-  background-color: var(--dark-color);
+  background-color: var(--bg-color);
   /* display: none; */
   overflow-x: hidden;
-  transition: all 250ms ease;
+  transition: all 700ms ease;
 }
 
 #mobile-nav.open {
   height: 100vh;
+  transition: all 400ms ease;
 }
 
 #mobile-nav ul {
   list-style: none;
   font-size: 2.6rem;
-  line-height: 3.5rem;
+  line-height: 4rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -235,6 +259,7 @@ nav ul li a:hover {
 
 button {
   font-family: "Jersey 25", sans-serif;
+  background: var(--cta);
   /* font-style: italic;
   font-weight: 700; */
   text-transform: uppercase;
@@ -310,10 +335,10 @@ button:hover {
   perspective: 10px;
   background: radial-gradient(
       111% 111% at 74.29% -11%,
-      #a93300 0%,
-      #005570 100%
+      var(--grad1) 0%,
+      var(--grad2) 100%
     ),
-    linear-gradient(127.43deg, #00d5c8 0%, #2200aa 100%);
+    linear-gradient(127.43deg, var(--grad3) 0%, var(--grad4) 100%);
   background-blend-mode: difference, normal;
   /* background: linear-gradient(to bottom left, #1d0a36, #29036e); */
   /* background: linear-gradient(90deg, rgb(99, 48, 222), rgb(76, 212, 233)); */
@@ -474,10 +499,15 @@ button:hover {
   /* z-index: 300; */
 }
 
+.wave-mask {
+  mask-image: url(img/bg/wave.png);
+}
+
 .about-me {
-  background-color: var(--dark-color);
-  min-height: 100vh;
+  background-color: var(--bg-color);
+  min-height: 80vh;
   padding: 2rem;
+  display: flex;
 }
 
 .bio-section {
@@ -509,6 +539,7 @@ button:hover {
 @media screen and (min-width: 900px) {
   .about-me {
     padding: 2rem;
+    align-items: center;
   }
   .bio {
     grid-template-columns: repeat(3, 1fr);
@@ -527,7 +558,7 @@ button:hover {
 
 .broadway-perio-section,
 .guitar-store-section {
-  background-color: var(--dark-color);
+  background-color: var(--bg-color);
   height: 100vh;
   scroll-snap-align: start;
   /* padding: 1rem; */
@@ -556,7 +587,7 @@ button:hover {
     ),
     linear-gradient(127.43deg, #00d5c8 0%, #2200aa 100%);
   background-blend-mode: difference, normal; */
-  background: linear-gradient(#1f0247, #005570);
+  /* background: linear-gradient(#1f0247, #005570); */
 }
 
 @media screen and (min-width: 1000px) {
@@ -567,11 +598,11 @@ button:hover {
 }
 
 .odd {
-  background: linear-gradient(#1f0247, #005570);
+  background: linear-gradient(var(--grad5), var(--grad6) 40%);
 }
 
 .even {
-  background: linear-gradient(#005570, #1f0247);
+  background: linear-gradient(var(--grad6) 40%, var(--grad5));
 }
 
 .work-description {
@@ -651,12 +682,12 @@ button:hover {
   z-index: 1;
   top: 9%;
   border-radius: 4.5% / 5.5%;
-  background: linear-gradient(90deg, #b297ce, #ecd8ff);
+  background: linear-gradient(90deg, #c4afda, #efdeff);
 }
 
 .bevel {
   display: flex;
-  background: var(--dark-color);
+  background: #14022d;
   overflow: auto;
   width: 100%;
   height: 84%;
@@ -682,7 +713,7 @@ button:hover {
   width: 5%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: var(--dark-color);
+  background: #14022d;
   margin: 3% auto;
 }
 
@@ -704,7 +735,7 @@ button:hover {
   /* border: solid 2px #ff7700; */
   /* transform: perspective(2em) rotateX(1deg); */
   clip-path: polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%);
-  background: linear-gradient(#b297ce 10%, #ecd8ff 65%);
+  background: linear-gradient(#b297ce 10%, #efdeff 80%);
 }
 
 .stand-base {
@@ -717,7 +748,7 @@ button:hover {
   /* border: solid 2px #ff7700; */
   /* transform: perspective(2em) rotateX(35deg); */
   clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
-  background: linear-gradient(#ecd8ff 20%, #b297ce 90%);
+  background: linear-gradient(#efdeff 20%, #b297ce 90%);
   z-index: 1;
   /* box-shadow: 0 2px 0 -1px #14022d; */
 }
@@ -757,5 +788,5 @@ button:hover {
   height: 100vh;
   scroll-snap-align: start;
   padding: 5%;
-  background-color: var(--dark-color);
+  background-color: var(--bg-color);
 }
