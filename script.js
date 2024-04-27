@@ -15,6 +15,7 @@ links.forEach(l => {
 });
 });
 
+
 // Light mode toggle
 
 const mode = document.getElementById("mode");
