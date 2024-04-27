@@ -5,6 +5,7 @@ const nav = document.getElementById("mobile-nav");
 
 hamburger.addEventListener("click", () => {
     nav.classList.toggle("open");
+    hamburger.classList.toggle("open");
 });
 
 const links = document.querySelectorAll(".mobile-nav-list a");

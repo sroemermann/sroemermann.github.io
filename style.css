@@ -177,6 +177,10 @@ header {
   }
 }
 
+/* ==========
+   NAVIGATION
+   ========== */
+
 nav {
   display: flex;
   align-items: center;
@@ -218,21 +222,41 @@ nav ul li a:hover {
   transition: all 500ms ease;
 }
 
+/* ==========
+   MOBILE NAV 
+   ========== */
+
 #hamburger {
   display: flex;
   cursor: pointer;
   flex-direction: column;
   justify-content: space-evenly;
-  /* margin: 2rem; */
-  width: 50px;
-  height: 40px;
+  width: 3.2rem;
+  height: 2.3rem;
+  padding: 0;
 }
 
 #hamburger .line {
-  width: 50px;
-  height: 2.5px;
+  width: 3.2rem;
+  height: 0.12rem;
   background-color: var(--primary);
   border-radius: 10%;
+  transition: all 350ms ease;
+}
+
+#hamburger.open {
+  justify-content: center;
+  align-items: center;
+}
+
+#hamburger.open .line-1 {
+  transform: rotate(210deg) translateX(-0.15rem);
+  transition: all 350ms ease;
+}
+
+#hamburger.open .line-2 {
+  transform: rotate(-30deg) translateX(0.15rem);
+  transition: all 350ms ease;
 }
 
 #mobile-nav {
@@ -266,6 +290,10 @@ nav ul li a:hover {
   #mobile-nav {
     display: none;
   }
+}
+
+#mobile-nav ul li a {
+  cursor: pointer;
 }
 
 /* =======
@@ -497,31 +525,35 @@ button:hover {
   }
 }
 
-/* ===========
-   BIO SECTION
-   =========== */
+/* ============
+   WAVE SECTION
+   ============ */
 
 .wave-wrapper {
-  width: 100vw;
-  filter: drop-shadow(-2em -2em 0.25em rgba(9, 164, 178, 0.2));
+  width: 110vw;
+  height: 32rem;
+  filter: drop-shadow(-1em -1em 0.25em rgba(9, 164, 178, 0.2));
   position: relative;
-  bottom: 0;
+  bottom: -11rem;
+  z-index: -1;
 }
 
 .wave-mask {
   width: 100%;
   position: relative;
-  bottom: -1rem;
-  height: 18rem;
+  bottom: 0;
+  height: 38rem;
   background-color: var(--bg-color);
   mask-image: url("https://raw.githubusercontent.com/sroemermann/sroemermann.github.io/main/img/bg/wave.png");
-  mask-repeat: no-repeat;
-  mask-size: 100% auto;
 }
+
+/* ===========
+   BIO SECTION
+   =========== */
 
 .about-me {
   background-color: var(--bg-color);
-  min-height: 80vh;
+  min-height: 70vh;
   padding: 1rem;
   display: flex;
 }
@@ -541,30 +573,21 @@ button:hover {
   grid-template-columns: 1fr;
 }
 
-.section-header {
-  /* width: 100%; */
-  /* margin: 1rem; */
-}
-
-.column {
-  /* width: 100%; */
-  /* margin: 1rem; */
-}
-
 @media screen and (min-width: 900px) {
   .about-me {
     padding: 2rem;
-    align-items: center;
+    align-items: flex-start;
   }
+
   .bio-section {
     padding: 2rem;
   }
+
   .bio {
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
   }
-  .column {
-  }
+
   .section-header {
     column-span: 2;
   }
@@ -650,11 +673,10 @@ button:hover {
 .computer {
   position: relative;
   width: clamp(200px, 90vw, 900px);
-  /* max-height: 800px; */
   bottom: -1rem;
   aspect-ratio: 1 / 1;
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   /* margin: 0 auto; */
