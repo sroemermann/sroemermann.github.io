@@ -1,4 +1,6 @@
 :root {
+  font-size: 16px;
+
   background-color: #0d102d;
   --primary: #53ffff;
   --cta: #e8fa46;
@@ -38,7 +40,6 @@
 }
 
 html {
-  font-size: 100%;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }
@@ -188,26 +189,17 @@ nav {
 
 nav ul {
   list-style: none;
-  /* width: 100%; */
   margin: 0;
   padding: 0;
   display: flex;
   gap: 2rem;
   justify-content: space-between;
-  /* margin: 2rem; */
 }
 
 @media screen and (max-width: 800px) {
   nav ul {
     display: none;
   }
-}
-
-nav ul li {
-  /* margin-left: 2rem; */
-  /* text-decoration: underline; */
-  /* transition: all 500ms ease; */
-  /* cursor: pointer; */
 }
 
 nav ul li a {
@@ -269,7 +261,6 @@ nav ul li a:hover {
   justify-content: center;
   z-index: 100;
   background-color: var(--bg-color);
-  /* display: none; */
   overflow-x: hidden;
   transition: all 700ms ease;
 }
@@ -303,8 +294,6 @@ nav ul li a:hover {
 button {
   font-family: "Jersey 25", sans-serif;
   background: var(--cta);
-  /* font-style: italic;
-  font-weight: 700; */
   text-transform: uppercase;
   font-size: 1.6rem;
   color: var(--dark-color);
@@ -313,7 +302,6 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  /* border: solid 0.25rem var(--cta); */
 }
 
 button:hover {
@@ -401,7 +389,7 @@ button:hover {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 90%;
   width: 100%;
   transform-style: preserve-3d;
   z-index: -1;
@@ -411,6 +399,7 @@ button:hover {
   .hero {
     flex-direction: row-reverse;
     justify-content: space-around;
+    height: 100%;
   }
 }
 
@@ -601,7 +590,7 @@ button:hover {
 .guitar-store-section {
   background-color: var(--bg-color);
   padding: 2rem 0;
-  min-height: 60vh;
+  min-height: 70vh;
   /* scroll-snap-align: start; */
   /* padding: 1rem; */
 }
@@ -619,27 +608,22 @@ button:hover {
   padding: 3rem 0;
   height: 100%;
   border-radius: 30px;
+  gap: 4rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
   /* border-radius: 40px; */
-  justify-content: center;
-  /* background: radial-gradient(
-      111% 111% at 74.29% -11%,
-      #a93300 0%,
-      #005570 100%
-    ),
-    linear-gradient(127.43deg, #00d5c8 0%, #2200aa 100%);
-  background-blend-mode: difference, normal; */
-  /* background: linear-gradient(#1f0247, #005570); */
+  justify-content: space-evenly;
 }
 
 @media screen and (min-width: 1000px) {
   .work-section {
     flex-direction: row;
     border-radius: 40px;
+    gap: 2rem;
+    justify-content: center;
   }
 }
 
@@ -672,17 +656,23 @@ button:hover {
 
 .computer {
   position: relative;
-  width: clamp(200px, 90vw, 900px);
-  bottom: -1rem;
-  aspect-ratio: 1 / 1;
+  width: 80vw;
+  /* aspect-ratio: 1 / 1; */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  /* margin: 0 auto; */
+  justify-content: flex-start;
+  flex-wrap: nowrap;
 }
 
-.computer::before,
+@media screen and (min-width: 1000px) {
+  .computer {
+    width: clamp(42rem, 50vw, 54rem);
+    top: 4rem;
+  }
+}
+
+/* .computer::before,
 .computer::after {
   position: absolute;
   content: "";
@@ -690,13 +680,11 @@ button:hover {
   width: 30%;
   height: 20%;
 }
-
 .computer::before {
   top: 20%;
   left: 25%;
   box-shadow: -4em -2em 8em #fff98b;
 }
-
 .computer::after {
   bottom: 45%;
   right: 30%;
@@ -704,30 +692,25 @@ button:hover {
 }
 
 @media screen and (min-width: 1000px) {
-  .computer {
-    width: clamp(300px, 70vw, 900px);
-    /* top: -10%; */
-  }
-
   .computer::before {
     top: 18%;
     left: 18%;
   }
-
   .computer::after {
     bottom: 38%;
     right: 25%;
   }
-}
+} */
 
 .monitor {
   position: relative;
+  aspect-ratio: 1.4 / 1;
   width: 86%;
-  height: 62%;
+  /* height: 62%; */
   z-index: 1;
-  top: 9%;
+  top: 0rem;
   border-radius: 4.5% / 5.5%;
-  background: linear-gradient(90deg, #c4afda, #efdeff);
+  background: linear-gradient(90deg, #c3bccc, #e0e0e0);
 }
 
 .bevel {
@@ -766,47 +749,49 @@ button:hover {
   position: relative;
   aspect-ratio: 1 / 1;
   width: 20%;
-  height: 12%;
+  /* height: 12%; */
   z-index: 0;
-  top: -6%;
+  top: 0rem;
 }
 
-.stand-top {
+/* .stand-top {
   position: relative;
+  margin: 0;
   width: 100%;
   height: 60%;
-  top: 14%;
-  /* aspect-ratio: 1 / 1; */
-  /* border: solid 2px #ff7700; */
-  /* transform: perspective(2em) rotateX(1deg); */
+  top: 2rem;
+  z-index: 0;
+  aspect-ratio: 1 / 1;
   clip-path: polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%);
-  background: linear-gradient(#b297ce 10%, #efdeff 80%);
+  background: linear-gradient(#c3bccc 50%, #e0e0e0 80%);
+} */
+
+.stand-bottom {
+  width: 159%;
+  margin: 0;
+  height: 6%;
+  background: linear-gradient(90deg, rgb(133, 129, 137) 30%, #6f647a);
+  position: absolute;
+  top: 3rem;
+  left: -30%;
+  border-radius: 2px;
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.5);
 }
 
 .stand-base {
   position: relative;
+  margin: 0;
   width: 160%;
   height: 35%;
-  bottom: -4%;
+  bottom: -0rem;
   left: -30%;
   /* aspect-ratio: 1 / 1; */
   /* border: solid 2px #ff7700; */
   /* transform: perspective(2em) rotateX(35deg); */
   clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
-  background: linear-gradient(#efdeff 20%, #b297ce 90%);
+  background: linear-gradient(#e0e0e0 20%, #c3bccc 90%);
   z-index: 1;
   /* box-shadow: 0 2px 0 -1px #14022d; */
-}
-
-.stand-bottom {
-  width: 159%;
-  height: 6%;
-  background: linear-gradient(90deg, rgb(127, 80, 171) 30%, #631caf);
-  position: absolute;
-  bottom: -5%;
-  left: -30%;
-  border-radius: 2px;
-  box-shadow: 0 0 3em rgba(0, 0, 0, 0.5);
 }
 
 /* .work {
@@ -828,9 +813,8 @@ button:hover {
    =============== */
 
 .contact-section {
-  scroll-snap-align: start;
   min-height: 60vh;
-  padding: 1rem;
+  padding: 2rem;
   background-color: var(--bg-color);
 }
 
