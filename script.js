@@ -52,15 +52,14 @@ let bg = document.getElementById("background");
 let louis = document.getElementById("louis");
 let bgg = document.getElementById("bg-g");
 let ht = document.getElementById("hero-text");
+let p1 = document.getElementById("p1");
 
 window.addEventListener("scroll", function() {
     let value = this.window.scrollY;
 
     bg.style.top = value * 1.05 + "px";
-    louis.style.top = value * 0.5 + "px";
+    louis.style.top = value * 0.75 + "px";
     bgg.style.top = value * 1 + "px";
-    ht.style.top = -value * 1 + "px";
-
-
-
+    ht.style.top = value * 0.5 + "px";
+    p1.style.top = value * 1.05 + "px";
 })
