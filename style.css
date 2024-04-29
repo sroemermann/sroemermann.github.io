@@ -589,7 +589,7 @@ button:hover {
 .broadway-perio-section,
 .guitar-store-section {
   background-color: var(--bg-color);
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   min-height: 70vh;
   /* scroll-snap-align: start; */
   /* padding: 1rem; */
@@ -656,19 +656,21 @@ button:hover {
 
 .computer {
   position: relative;
-  width: 80vw;
-  /* aspect-ratio: 1 / 1; */
+  width: clamp(400px, 80%, 900px);
+  aspect-ratio: 4 / 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  margin: 2rem;
+  gap: unset;
 }
 
 @media screen and (min-width: 1000px) {
   .computer {
-    width: clamp(42rem, 50vw, 54rem);
-    top: 4rem;
+    /* width: clamp(42rem, 50vw, 54rem); */
+    /* top: 4rem; */
   }
 }
 
@@ -704,9 +706,13 @@ button:hover {
 
 .monitor {
   position: relative;
-  aspect-ratio: 1.4 / 1;
-  width: 86%;
-  /* height: 62%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  /* aspect-ratio: 16 / 9; */
+  width: 100%;
+  height: 90%;
   z-index: 1;
   top: 0rem;
   border-radius: 4.5% / 5.5%;
@@ -717,6 +723,7 @@ button:hover {
   display: flex;
   background: var(--dark-color);
   overflow: auto;
+  aspect-ratio: 1.8 / 1;
   width: 100%;
   height: 84%;
   z-index: 1;
@@ -747,62 +754,31 @@ button:hover {
 
 .computer-stand {
   position: relative;
-  aspect-ratio: 1 / 1;
-  width: 20%;
-  /* height: 12%; */
-  z-index: 0;
   top: 0rem;
+  --c: 31px;
+  width: 27%;
+  aspect-ratio: 3/1;
+  mask: radial-gradient(
+      var(--c) 82% at var(--c) 10%,
+      #0000 calc(100% - 2px),
+      #000
+    )
+    calc(-1 * var(--c)) 0;
+
+  background: linear-gradient(
+    #c3bccc 20%,
+    #e0e0e0 51%,
+    #e0e0e0 89%,
+    #c3bccc 94%,
+    #c3bccc 100%
+  );
 }
 
-/* .stand-top {
-  position: relative;
-  margin: 0;
-  width: 100%;
-  height: 60%;
-  top: 2rem;
-  z-index: 0;
-  aspect-ratio: 1 / 1;
-  clip-path: polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%);
-  background: linear-gradient(#c3bccc 50%, #e0e0e0 80%);
-} */
-
-.stand-bottom {
-  width: 159%;
-  margin: 0;
-  height: 6%;
-  background: linear-gradient(90deg, rgb(133, 129, 137) 30%, #6f647a);
-  position: absolute;
-  top: 3rem;
-  left: -30%;
-  border-radius: 2px;
-  box-shadow: 0 0 3em rgba(0, 0, 0, 0.5);
+.work-image {
+  background-color: #14292f;
+  height: 500px;
+  width: 600px;
 }
-
-.stand-base {
-  position: relative;
-  margin: 0;
-  width: 160%;
-  height: 35%;
-  bottom: -0rem;
-  left: -30%;
-  /* aspect-ratio: 1 / 1; */
-  /* border: solid 2px #ff7700; */
-  /* transform: perspective(2em) rotateX(35deg); */
-  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
-  background: linear-gradient(#e0e0e0 20%, #c3bccc 90%);
-  z-index: 1;
-  /* box-shadow: 0 2px 0 -1px #14022d; */
-}
-
-/* .work {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  align-self: stretch;
-  padding: 10px;
-  min-width: 40vw;
-  min-height: 70vh;
-  flex: 1;
-} */
 
 .guitar-store {
   background: #005570;
