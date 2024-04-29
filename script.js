@@ -51,13 +51,16 @@ modeMobile.addEventListener("click", () => {
 let bg = document.getElementById("background");
 let louis = document.getElementById("louis");
 let bgg = document.getElementById("bg-g");
+let ht = document.getElementById("hero-text");
 
 window.addEventListener("scroll", function() {
     let value = this.window.scrollY;
 
-    bg.style.top = value * 1.1 + "px";
-    louis.style.top = -value * 0.75 + "px";
+    bg.style.top = value * 1.05 + "px";
+    louis.style.top = value * 0.5 + "px";
     bgg.style.top = value * 1 + "px";
+    ht.style.top = -value * 1 + "px";
+
 
 
 })

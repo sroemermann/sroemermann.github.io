@@ -316,30 +316,16 @@ button:hover {
 
 .hero-button {
   font-size: 1.6rem;
-  /* clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%); */
   padding: 0.8rem 2rem 0.8rem 2rem;
   background: var(--cta);
   margin-right: 1rem;
-  /* background: linear-gradient(
-    180deg,
-    var(--cta) 0%,
-    var(--cta) 20%,
-    #d9f100 30%,
-    #d9f100 75%,
-    #bfd401 85%,
-    #bfd401 100%
-  ); */
   border: none;
   border-radius: 4px;
-  /* margin: 0 -0.4rem; */
-  /* width: 9rem; */
 }
 
 @media screen and (min-width: 600px) {
   .hero-button {
     font-size: 2rem;
-    /* width: 13rem; */
-    /* margin: 0 -0.6rem; */
   }
 }
 
@@ -348,31 +334,15 @@ button:hover {
   background: var(--dark-color);
 }
 
-/* .hero-button-2 {
-  margin-left: -2em;
-  padding: 1rem 0 1rem 2rem;
-  clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0% 100%);
-} */
-
 /* ============
    HERO SECTION
    ============ */
 
-/* HERO BACKGROUND */
-
-.intro {
-  min-height: 100vh;
-  width: 100%;
-  overflow-y: hidden;
-  /* background: radial-gradient(
-      111% 111% at 74.29% -11%,
-      var(--grad1) 0%,
-      var(--grad2) 100%
-    ),
-    linear-gradient(127.43deg, var(--grad3) 0%, var(--grad4) 100%);
-  background-blend-mode: difference, normal;
-  z-index: -2; */
+.hero-bio {
+  overflow: hidden;
 }
+
+/* HERO BACKGROUND */
 
 .background-gradient {
   position: absolute;
@@ -396,7 +366,7 @@ button:hover {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  min-height: 100vh;
   width: 100%;
   /* transform-style: preserve-3d; */
   z-index: -1;
@@ -511,19 +481,15 @@ button:hover {
   flex-direction: column;
   align-items: center;
   margin: 0 2rem;
-  /* justify-content: space-evenly; */
   text-align: center;
-  z-index: 2;
-  /* top: 2rem; */
+  z-index: 4;
 }
 
 @media screen and (min-width: 971px) {
   .hero-text {
     width: 38%;
     align-items: flex-start;
-    /* margin: 10% 0 auto 0; */
     text-align: left;
-    /* transform: translateZ(-10px) scale(2); */
   }
 }
 
@@ -532,16 +498,18 @@ button:hover {
    ============ */
 
 .wave-wrapper {
+  overflow: hidden;
   width: 110vw;
-  height: 17rem;
+  height: 38rem;
   filter: drop-shadow(-1em -1em 0.25em rgba(9, 164, 178, 0.2));
   position: relative;
-  bottom: 1rem;
+  bottom: 0rem;
   z-index: 1;
 }
 
 .wave-mask {
   width: 100%;
+  overflow: hidden;
   position: relative;
   bottom: 0;
   height: 38rem;
@@ -555,10 +523,11 @@ button:hover {
 
 .about-me {
   position: relative;
+  top: 2rem;
   background-color: var(--bg-color);
   min-height: 70vh;
   padding: 1rem;
-  display: flex;
+  /* display: flex; */
   z-index: 2;
 }
 
@@ -804,8 +773,8 @@ button:hover {
 
 .work-image {
   background-color: #14292f;
-  height: 500px;
-  width: 600px;
+  width: 80%;
+  aspect-ratio: 1 / 1;
 }
 
 .guitar-store {
