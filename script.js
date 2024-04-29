@@ -45,3 +45,19 @@ modeMobile.addEventListener("click", () => {
         mode.innerHTML = "Light";
     }
 });
+
+// hero parallax scroll effect
+
+let bg = document.getElementById("background");
+let louis = document.getElementById("louis");
+let bgg = document.getElementById("bg-g");
+
+window.addEventListener("scroll", function() {
+    let value = this.window.scrollY;
+
+    bg.style.top = value * 1.1 + "px";
+    louis.style.top = -value * 0.75 + "px";
+    bgg.style.top = value * 1 + "px";
+
+
+})
