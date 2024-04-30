@@ -51,20 +51,20 @@ modeMobile.addEventListener("click", () => {
 
 // if width > 600, add fixed class and remove parallax class. else, reverse.
 
-// const width = window.innerWidth;
-// const bg = document.getElementById("background");
-// const louis = document.getElementById("louis");
-// const bgg = document.getElementById("bg-g");
+const width = window.innerWidth;
+const bg = document.getElementById("background");
+const louis = document.getElementById("louis");
+const bgg = document.getElementById("bg-g");
 
-// window.addEventListener("scroll", function() {
-//     const value = this.window.scrollY;
-            
-//     bg.style.top = value * 1.1 + "px";
-//     louis.style.top = value * 0.75 + "px";
-//     bgg.style.top = value * 1 + "px";  
-//     }
+window.addEventListener("scroll", function() {
+    const value = this.window.scrollY;
     
-// )
+        bg.style.top = value * 1.05 + "px";
+        louis.style.top = value * 0.75 + "px";
+        bgg.style.top = value * 1 + "px";  
+}
+    
+)
 
 
 // change nav styling when at top of window 
