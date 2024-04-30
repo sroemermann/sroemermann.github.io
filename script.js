@@ -57,7 +57,7 @@ mode.addEventListener("click", () => {
         d: [
             {value: modeToggle ? sunPath : moonPath}
         ],
-        fill: modeToggle ? "#e8fa46" : "#000000"
+        fill: modeToggle ? "#e8fa46" : "#debd00"
     })
     .add({
         targets: "#mode",

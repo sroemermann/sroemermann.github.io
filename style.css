@@ -5,6 +5,7 @@
   --primary: #53ffff;
   --cta: #e8fa46;
   --bg-color: #04072c;
+  --bg-color2: #03445e;
   --dark-color: #04072c;
   --body-color: white;
   --shadow: #04072cbd;
@@ -23,16 +24,17 @@
   --cta: #fde800;
   --body-color: #14022d;
   --bg-color: #f0f0f0;
+  --bg-color2: #ffffff;
   --dark-color: #3c3c43;
   --shadow: #ffffffa1;
 
   /* bg gradients */
-  --grad1: #762100;
-  --grad2: #6e7000;
-  --grad3: #92fcff;
-  --grad4: #ffcfc1;
+  --grad1: #6e7fff;
+  --grad2: #6e66ad;
+  --grad3: #000000;
+  --grad4: #000000;
   --grad5: #ffffff;
-  --grad6: #cadfe6;
+  --grad6: #eefbff;
 }
 
 *,
@@ -73,9 +75,9 @@ h1 {
 h2 {
   /* color: white; */
   font-size: 2.6rem;
-  font-weight: 500;
+  font-weight: 700;
   margin: 0;
-  font-family: "Jersey 25", sans-serif;
+  /* font-family: "Jersey 25", sans-serif; */
 }
 
 @media screen and (min-width: 600px) {
@@ -172,8 +174,9 @@ header {
 }
 
 header.scrolled {
-  background: var(--shadow);
+  background: var(--bg-color);
   height: 3.2rem;
+  box-shadow: 0 -1rem 2rem var(--body-color);
 }
 
 @media screen and (min-width: 800px) {
@@ -199,6 +202,7 @@ nav ul {
   gap: 2rem;
   justify-content: space-between;
   line-height: normal;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 800px) {
@@ -285,7 +289,8 @@ svg {
   flex-direction: column;
   justify-content: center;
   z-index: 100;
-  background-color: var(--bg-color);
+  /* background-color: var(--bg-color); */
+  background: linear-gradient(var(--bg-color), var(--bg-color2));
   overflow-x: hidden;
   transition: all 700ms ease;
 }
@@ -326,7 +331,9 @@ svg {
    ======= */
 
 button {
-  font-family: "Jersey 25", sans-serif;
+  /* font-family: "Jersey 25", sans-serif; */
+  font-family: "Space Mono", monospace;
+  /* font-weight: 700; */
   background: var(--cta);
   text-transform: uppercase;
   font-size: 1.6rem;
@@ -362,11 +369,6 @@ button:hover {
   .hero-button {
     font-size: 2rem;
   }
-}
-
-.hero-button:hover {
-  /* color: var(--cta); */
-  /* background: var(--dark-color); */
 }
 
 /* ============
@@ -485,7 +487,7 @@ button:hover {
   width: 80%;
   max-width: 600px;
   z-index: 3;
-  animation: louis-float 18000ms infinite alternate linear;
+  animation: louis-float 18000ms infinite alternate ease;
 }
 
 @keyframes louis-float {
@@ -493,13 +495,13 @@ button:hover {
     transform: rotate(5deg);
   }
   25% {
-    transform: translateY(-1rem);
+    transform: translateY(-2rem);
   }
   50% {
     transform: rotate(-5deg);
   }
   75% {
-    transform: translateY(1rem);
+    transform: translateY(2rem);
   }
   100% {
     transform: rotate(5deg);
