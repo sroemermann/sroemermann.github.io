@@ -20,10 +20,10 @@
 
 :root.light-mode {
   --primary: #0a0030;
-  --cta: #decc00;
+  --cta: #fde800;
   --body-color: #14022d;
   --bg-color: #f5f5f5;
-  --dark-color: #30273a;
+  --dark-color: #3c3c43;
   --shadow: #ffffffa1;
 
   /* bg gradients */
@@ -31,8 +31,8 @@
   --grad2: #6e7000;
   --grad3: #92fcff;
   --grad4: #ffcfc1;
-  --grad5: #dad2e5;
-  --grad6: #b9e7f6;
+  --grad5: #e1e1e1;
+  --grad6: #cadfe6;
 }
 
 *,
@@ -48,7 +48,7 @@ html {
 
 body {
   margin: 0;
-  width: 100%;
+  /* width: 100%; */
   color: var(--body-color);
   font-family: "Space Mono", sans-serif;
   font-size: 1rem;
@@ -166,13 +166,25 @@ header {
   width: 100%;
   top: 0;
   height: 5rem;
-  background: linear-gradient(180deg, var(--shadow), transparent);
+  /* background: linear-gradient(180deg, var(--shadow) 30%, transparent); */
+  background-color: transparent;
   z-index: 101;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  overflow: hidden;
+  transition: all 550ms ease;
+}
+
+header.nav-hide {
+  top: -5rem;
+  transition: all 550ms ease;
+}
+
+header.nav-middle {
+  background-color: var(--bg-color);
 }
 
 @media screen and (min-width: 800px) {
@@ -348,7 +360,7 @@ button:hover {
 
 .background-gradient {
   position: absolute;
-  min-height: 100vh;
+  height: 115%;
   width: 100%;
   background: radial-gradient(
       111% 111% at 74.29% -11%,
@@ -370,21 +382,18 @@ button:hover {
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  /* transform-style: preserve-3d; */
-  /* z-index: -1; */
 }
 
 @media screen and (min-width: 971px) {
   .hero {
     flex-direction: row-reverse;
     justify-content: center;
-    /* height: 100%; */
   }
 }
 
 .background {
   position: absolute;
-  height: 100%;
+  height: 115%;
   width: 100%;
   object-fit: cover;
   z-index: -1;
@@ -398,18 +407,18 @@ button:hover {
   width: 100%;
   object-fit: cover;
   transform-origin: 50% 50%;
-  animation: stars-rotate 40000ms ease-in-out alternate infinite;
+  animation: stars-rotate 45000ms ease-in-out alternate infinite;
 }
 
 @keyframes stars-rotate {
   0% {
-    transform: rotate(-7deg);
+    transform: rotate(-5deg);
   }
   50% {
-    transform: rotate(7deg);
+    transform: rotate(5deg);
   }
   100% {
-    transform: rotate(-7deg);
+    transform: rotate(-5deg);
   }
 }
 
@@ -439,16 +448,6 @@ button:hover {
   100% {
     opacity: 1;
   }
-}
-
-.planet {
-  position: relative;
-  left: 10%;
-  top: 40%;
-  width: clamp(50px, 10%, 100px);
-  aspect-ratio: 1/1;
-  background-color: #903c00;
-  border-radius: 50%;
 }
 
 /* HERO FOREGROUND */
@@ -518,7 +517,7 @@ button:hover {
   filter: drop-shadow(-1em -1em 0.25em rgba(9, 164, 178, 0.2));
   position: relative;
   bottom: 0rem;
-  z-index: 3;
+  z-index: 5;
   margin-bottom: -18rem;
 }
 
@@ -543,7 +542,7 @@ button:hover {
   min-height: 70vh;
   padding: 1rem;
   /* display: flex; */
-  z-index: 4;
+  z-index: 6;
 }
 
 .bio-section {
@@ -779,7 +778,7 @@ button:hover {
     width: 27%;
     mask: radial-gradient(
         var(--c) 82% at var(--c) 10%,
-        #0000 calc(100% - 2px),
+        #0000 calc(100% - 1px),
         #000
       )
       calc(-1 * var(--c)) 0;
