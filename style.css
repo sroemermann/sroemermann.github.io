@@ -7,7 +7,7 @@
   --bg-color: #04072c;
   --dark-color: #04072c;
   --body-color: white;
-  --shadow: #04072caf;
+  --shadow: #04072cbd;
 
   /* bg gradients */
   --grad1: #a93300;
@@ -19,10 +19,10 @@
 }
 
 :root.light-mode {
-  --primary: #0a0030;
+  --primary: #211a3d;
   --cta: #fde800;
   --body-color: #14022d;
-  --bg-color: #f5f5f5;
+  --bg-color: #f0f0f0;
   --dark-color: #3c3c43;
   --shadow: #ffffffa1;
 
@@ -31,7 +31,7 @@
   --grad2: #6e7000;
   --grad3: #92fcff;
   --grad4: #ffcfc1;
-  --grad5: #e1e1e1;
+  --grad5: #ffffff;
   --grad6: #cadfe6;
 }
 
@@ -48,7 +48,6 @@ html {
 
 body {
   margin: 0;
-  /* width: 100%; */
   color: var(--body-color);
   font-family: "Space Mono", sans-serif;
   font-size: 1rem;
@@ -160,7 +159,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  height: 5rem;
+  height: 6rem;
   background: transparent;
   z-index: 101;
   display: flex;
@@ -174,7 +173,7 @@ header {
 
 header.scrolled {
   background: var(--shadow);
-  height: 2.6rem;
+  height: 3.2rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -199,6 +198,7 @@ nav ul {
   display: flex;
   gap: 2rem;
   justify-content: space-between;
+  line-height: normal;
 }
 
 @media screen and (max-width: 800px) {
@@ -211,6 +211,7 @@ nav ul li a {
   transition: all 500ms ease;
   color: var(--primary);
   cursor: pointer;
+  margin: 0;
 }
 
 nav ul li a:hover {
@@ -232,6 +233,10 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
   width: 100%;
+}
+
+svg {
+  cursor: pointer;
 }
 
 /* ==========
@@ -329,13 +334,15 @@ button {
   transition: all 500ms ease;
   padding: 0.5rem 1.2rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
 button:hover {
-  background: var(--dark-color);
-  color: var(--cta);
+  background: #ffffff;
+  box-shadow: 0 0.5rem 0.01rem var(--cta);
+  transform: translateY(-0.5rem);
+  /* color: var(--cta); */
 }
 
 .hero-buttons {
@@ -343,12 +350,12 @@ button:hover {
 }
 
 .hero-button {
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
   padding: 0.8rem 2rem 0.8rem 2rem;
-  background: var(--cta);
-  margin-right: 1rem;
-  border: none;
-  border-radius: 4px;
+  /* background: var(--cta); */
+  /* margin-right: 1rem; */
+  /* border: none; */
+  /* border-radius: 4px; */
 }
 
 @media screen and (min-width: 600px) {
@@ -358,8 +365,8 @@ button:hover {
 }
 
 .hero-button:hover {
-  color: var(--cta);
-  background: var(--dark-color);
+  /* color: var(--cta); */
+  /* background: var(--dark-color); */
 }
 
 /* ============
@@ -384,13 +391,13 @@ button:hover {
     linear-gradient(127.43deg, var(--grad3) 0%, var(--grad4) 100%);
   background-blend-mode: difference, normal;
   z-index: -2;
-  transform: scale(1.5, 1);
+  /* transform: scale(1.5, 1); */
 }
 
 .hero {
   position: relative;
   display: flex;
-  flex-direction: column-reverse;
+  /* flex-direction: column-reverse; */
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
@@ -400,8 +407,9 @@ button:hover {
 
 @media screen and (min-width: 971px) {
   .hero {
-    flex-direction: row-reverse;
-    justify-content: center;
+    /* flex-direction: row-reverse; */
+    /* justify-content: center; */
+    min-height: 100vh;
   }
 }
 
@@ -474,20 +482,10 @@ button:hover {
 
 .louis {
   position: relative;
-  /* margin: 0 auto; */
-  /* height: clamp(250px, 30%, 600px); */
   width: 80%;
   max-width: 600px;
-  /* transform-origin: 50% 50%; */
   z-index: 3;
   animation: louis-float 18000ms infinite alternate linear;
-}
-
-@media screen and (min-width: 1000px) {
-  .louis {
-    /* height: auto; */
-    /* transform: translateZ(3px) scale(1); */
-  }
 }
 
 @keyframes louis-float {
@@ -508,7 +506,7 @@ button:hover {
   }
 }
 
-.hero-text {
+/* .hero-text {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -524,7 +522,7 @@ button:hover {
     align-items: flex-start;
     text-align: left;
   }
-}
+} */
 
 /* ============
    WAVE SECTION
@@ -533,7 +531,7 @@ button:hover {
 .wave-wrapper {
   width: 110vw;
   height: 38rem;
-  filter: drop-shadow(-1em -1em 0.25em rgba(9, 164, 178, 0.2));
+  filter: drop-shadow(0 0rem 4rem rgba(255, 255, 255, 0.5));
   position: relative;
   bottom: 0rem;
   z-index: 5;
@@ -548,6 +546,9 @@ button:hover {
   height: 38rem;
   background-color: var(--bg-color);
   mask-image: url("https://raw.githubusercontent.com/sroemermann/sroemermann.github.io/main/img/bg/wave.png");
+  mask-size: cover;
+  mask-position: center;
+  /* -webkit-mask-image: url("https://raw.githubusercontent.com/sroemermann/sroemermann.github.io/main/img/bg/wave.png"); */
 }
 
 /* ===========
@@ -603,8 +604,24 @@ button:hover {
    ============ */
 
 .work-section-intro {
-  min-height: 50vh;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--bg-color);
+  padding: 4rem;
+}
+
+.check-it-out {
+  color: var(--body-color);
+}
+
+.check-it-out::before,
+.check-it-out::after {
+  position: absolute;
+  content: "";
+  background-color: var(--body-color);
+  /* animation */
 }
 
 .broadway-perio-section,
@@ -612,8 +629,6 @@ button:hover {
   background-color: var(--bg-color);
   padding: 2rem 1rem;
   min-height: 70vh;
-  /* scroll-snap-align: start; */
-  /* padding: 1rem; */
 }
 
 @media screen and (min-width: 1000px) {
@@ -635,8 +650,8 @@ button:hover {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  /* border-radius: 40px; */
   justify-content: space-evenly;
+  background: linear-gradient(var(--grad5), var(--grad6) 40%);
 }
 
 @media screen and (min-width: 1000px) {
@@ -646,14 +661,6 @@ button:hover {
     gap: 2rem;
     justify-content: center;
   }
-}
-
-.odd {
-  background: linear-gradient(var(--grad5), var(--grad6) 40%);
-}
-
-.even {
-  background: linear-gradient(var(--grad6) 40%, var(--grad5));
 }
 
 .work-description {
@@ -737,7 +744,8 @@ button:hover {
   z-index: 1;
   top: 0rem;
   border-radius: 4% / 6%;
-  background: linear-gradient(90deg, #c3bccc, #e0e0e0);
+  background: linear-gradient(90deg, #c6c6d5, #fdfdfd);
+  box-shadow: 0 0 3rem #04072c2f;
 }
 
 .bevel {
@@ -787,17 +795,18 @@ button:hover {
     calc(-1 * var(--c)) 0;
 
   background: linear-gradient(
-    #c3bccc 25%,
-    #e0e0e0 60%,
-    #e0e0e0 92%,
-    #c3bccc 94%,
-    #c3bccc 100%
+    #c6c6d5 10%,
+    #fdfdfd 70%,
+    #fdfdfd 92%,
+    #c6c6d5 94%,
+    #c6c6d5 100%
   );
+  box-shadow: 0 0 3rem #04072c2f;
 }
 
 @media screen and (min-width: 900px) {
   .computer-stand {
-    --c: 35px;
+    --c: 30px;
     width: 27%;
     mask: radial-gradient(
         var(--c) 82% at var(--c) 10%,

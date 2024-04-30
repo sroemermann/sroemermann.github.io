@@ -6,6 +6,7 @@
     <title>Steven Roemermann</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="anime.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     </style>
@@ -15,7 +16,7 @@
 </head>
 
 <body>
-    
+    <!-- HEADER & NAVIGATION -->
     <header>
         <div class="page-title">
             <h1>Steven Roemermann</h1>
@@ -25,7 +26,19 @@
                 <li><a href="#about-me">About</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a id="mode">Light</a></li> 
+                <li><svg 
+                    id="mode" 
+                    width="24" 
+                    height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path 
+                    class="sun" 
+                    d="M24.2799 11.9968C24.2799 17.5883 20.4556 22.2866 15.2799 23.6187C14.3211 23.8655 13.3158 23.9968 12.2799 23.9968C5.65251 23.9968 0.279922 18.6242 0.279922 11.9968C0.279922 5.36938 5.65251 -0.00320435 12.2799 -0.00320435C13.3158 -0.00320435 14.3211 0.128055 15.2799 0.374848C20.4556 1.70698 24.2799 6.40528 24.2799 11.9968Z" 
+                    fill="#e8fa46"/>
+                    </svg>
+                </li>
             </ul>
             <div id="hamburger">
                 <div class="line line-1"></div>
@@ -76,10 +89,10 @@
     
             <!-- WORK SECTION -->
             <div class="work-section-intro" id="work">
-                <p>Check out some of my work below!</p>
+                <h2 class="check-it-out">Check out some of my work below!</h2>
             </div>
             <div class="broadway-perio-section">
-                <div class="work-section odd">
+                <div class="work-section">
                     <div class="work-description">
                         <p class="work-type">Website</p>
                         <h2>Broadway Perio</h2>
@@ -101,7 +114,7 @@
             </div>
             
             <section class="guitar-store-section">
-                <div class="work-section even">
+                <div class="work-section">
                     <div class="work-description">
                         <p class="work-type">Java application</p>
                         <h2>Guitar Store</h2>
@@ -141,6 +154,9 @@
         </div>
 
     </div>
+
+            
+        
 
 
 </body>
