@@ -339,7 +339,7 @@ svg {
 
 button {
   font-family: "Space Mono", monospace;
-  background: var(--body-color);
+  background: var(--primary);
   color: var(--bg-color);
   text-transform: uppercase;
   font-size: 1.1rem;
@@ -352,7 +352,7 @@ button {
 
 button:hover {
   background: var(--primary);
-  box-shadow: 0 0.25rem 0.01rem var(--body-color);
+  box-shadow: 0 0.25rem 0.01rem var(--body-color), 0 0 2rem #ffffff98 inset;
   transform: translateY(-0.25rem);
   transition: all 250ms ease;
 }
@@ -368,25 +368,24 @@ button:hover {
 
 @keyframes glow {
   0% {
-    background-color: #2a18b5;
+    background-color: #0e8bad;
   }
   33% {
     background-color: #7113c9;
   }
   66% {
-    background-color: #25858e;
+    background-color: #402ec8;
   }
   100% {
-    background-color: #2a18b5;
+    background-color: #0e8bad;
   }
 }
 
 .contact-button:hover {
   /* transform: none; */
   color: var(--bg-color);
-  transition: all 500ms ease;
+  transition: all 250ms ease;
   animation: none;
-  /* background-color: #24c4d2; */
   background-color: var(--primary);
   box-shadow: 0 0.25rem 0.01rem var(--body-color);
 }
