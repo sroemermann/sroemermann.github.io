@@ -128,7 +128,11 @@ window.addEventListener("scroll", function() {
         bg.style.top = value * 1.05 + "px";
         louis.style.top = value * 0.75 + "px";
         bgg.style.top = value * 1 + "px";  
-    } 
+    } else {
+        bg.style.top = 0;
+        louis.style.top = 0;
+        bgg.style.top = 0;  
+    }
 })
 
 
