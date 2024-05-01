@@ -2,25 +2,50 @@
 
 const hamburger = document.getElementById("hamburger");
 const mobileNav = document.getElementById("mobile-nav");
+let navToggle = false;
 
 hamburger.addEventListener("click", () => {
-    mobileNav.classList.toggle("open");
-    hamburger.classList.toggle("open");
+    if (navToggle === false) {
+        mobileNav.classList.add("open");
+        hamburger.classList.add("open");
+        navToggle = true;
+    } else {
+        mobileNav.classList.remove("open");
+        hamburger.classList.remove("open");
+        navToggle = false;
+    }
+    
 });
 
 const links = document.querySelectorAll(".mobile-nav-list a");
 
 links.forEach(l => {
     l.addEventListener("click", () => {
-        mobileNav.classList.toggle("open");
-        hamburger.classList.toggle("open");
+        if (navToggle === true) {
+            mobileNav.classList.remove("open");
+            hamburger.classList.remove("open");
+            navToggle = false;
+        } else {
+            mobileNav.classList.add("open");
+            hamburger.classList.add("open");
+            navToggle = true;
+        }
 });
 });
 
 
-// Close mobile menu if window resized
+// Close mobile menu if window resized > 800px
 
-const width = window.innerWidth;
+onresize = (event) => {
+    let w = window.innerWidth;
+    if (w > 800) {
+        if (navToggle === true) {
+            mobileNav.classList.remove("open");
+            hamburger.classList.remove("open");
+            navToggle = false;
+        } 
+    }
+};
 
 
 
@@ -91,21 +116,20 @@ modeMobile.addEventListener("click", () => {
 
 // hero parallax scroll effect
 
-// if width > 600, add fixed class and remove parallax class. else, reverse.
-
 const bg = document.getElementById("background");
 const louis = document.getElementById("louis");
 const bgg = document.getElementById("bg-g");
 
 window.addEventListener("scroll", function() {
     const value = this.window.scrollY;
-    
+    let w = window.innerWidth;
+
+    if (w > 800) {
         bg.style.top = value * 1.05 + "px";
         louis.style.top = value * 0.75 + "px";
         bgg.style.top = value * 1 + "px";  
-}
-    
-)
+    } 
+})
 
 
 // change nav styling when at top of window 
