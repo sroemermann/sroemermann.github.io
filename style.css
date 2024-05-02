@@ -5,8 +5,8 @@
   --primary: #7adede;
   --body-color: white;
   --bg-color: #131531;
-  --bg-color2: #133241;
-  --dark-color: #131531;
+  --bg-color2: #122f3d;
+  --dark-color: #252846;
 
   /* bg gradients */
   --grad1: #a93300;
@@ -50,19 +50,6 @@ body {
 /* ==========
    TYPOGRAPHY
    ========== */
-
-h1 {
-  font-size: 0.9rem;
-  font-family: "Space Mono", sans-serif;
-  font-weight: 400;
-  /* color: var(--primary); */
-}
-
-@media screen and (min-width: 800px) {
-  h1 {
-    font-size: 1.2rem;
-  }
-}
 
 h2 {
   color: var(--primary);
@@ -137,6 +124,19 @@ a:hover {
 /* ======
    HEADER
    ====== */
+
+h1 {
+  font-size: 0.9rem;
+  font-family: "Space Mono", sans-serif;
+  font-weight: 400;
+  transition: font-size 500ms ease;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+}
 
 header {
   color: #ffffff;
@@ -678,7 +678,15 @@ button:hover {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  background: var(--bg-color2);
+  /* background: var(--bg-color2); */
+  background: repeating-linear-gradient(
+    135deg,
+    var(--bg-color2) 0px,
+    var(--bg-color2) 2.5px,
+    transparent 2.5px,
+    transparent 20px
+  );
+  background-attachment: fixed;
 }
 
 @media screen and (min-width: 1000px) {
