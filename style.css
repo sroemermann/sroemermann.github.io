@@ -2,13 +2,12 @@
   font-size: 16px;
 
   background-color: #04072c;
-  --primary: #53d8d8;
-  --cta: #e8fa46;
-  --bg-color: #04072c;
+  --primary: #7adede;
+  --body-color: white;
+  --bg-color: #131531;
   --bg-color2: #03445e;
   --bg-color3: #053e6a;
   --dark-color: #04072c;
-  --body-color: white;
 
   /* bg gradients */
   --grad1: #a93300;
@@ -19,8 +18,7 @@
 
 :root.light-mode {
   --primary: #28a1a1;
-  --cta: #fde800;
-  --body-color: #04072c;
+  --body-color: #4b4b4b;
   --bg-color: #f0f0f0;
   --bg-color2: #d2f1f1;
   --bg-color3: #ffffff;
@@ -155,7 +153,7 @@ a:hover {
    ====== */
 
 header {
-  color: var(--body-color);
+  color: #ffffff;
   position: fixed;
   width: 100%;
   top: 0;
@@ -172,12 +170,12 @@ header {
 }
 
 header > nav > ul > li > a {
-  color: var(--body-color);
+  color: #ffffff;
 }
 
 @media screen and (min-width: 800px) {
   header {
-    padding: 0 4rem;
+    padding: 0 2rem;
     height: 6rem;
   }
 }
@@ -185,7 +183,13 @@ header > nav > ul > li > a {
 header.scrolled {
   background: var(--bg-color);
   color: var(--primary);
-  height: 3.6rem;
+  height: 3rem;
+}
+
+@media screen and (min-width: 800px) {
+  header.scrolled {
+    height: 3.6rem;
+  }
 }
 
 header.scrolled > nav > ul > li > a {
@@ -206,7 +210,7 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   justify-content: space-between;
   line-height: normal;
   text-transform: uppercase;
@@ -267,9 +271,13 @@ svg {
 #hamburger .line {
   width: 2.4rem;
   height: 0.1rem;
-  background-color: var(--primary);
+  background-color: #ffffff;
   border-radius: 10%;
   transition: all 350ms ease;
+}
+
+header.scrolled > nav > #hamburger .line {
+  background-color: var(--primary);
 }
 
 #hamburger.open {
@@ -363,7 +371,7 @@ button:hover {
   color: #ffffff;
   transition: all 500ms ease;
   border-radius: 6px;
-  animation: glow 10000ms infinite;
+  animation: glow 8000ms infinite;
 }
 
 @keyframes glow {
@@ -849,7 +857,7 @@ button:hover {
       rgba(66, 66, 66, 0.6),
       rgba(10, 10, 10, 0.7)
     ),
-    url("img/computer/java-code.jpg");
+    url("img/computer/java-code-small.jpg");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -857,6 +865,11 @@ button:hover {
 @media screen and (min-width: 1000px) {
   .java-section {
     min-height: 70vh;
+    background-image: linear-gradient(
+        rgba(66, 66, 66, 0.6),
+        rgba(10, 10, 10, 0.7)
+      ),
+      url("img/computer/java-code.jpg");
   }
 }
 
