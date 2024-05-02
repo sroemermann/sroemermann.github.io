@@ -861,7 +861,7 @@ button:hover {
 .java-section {
   color: #ffffff;
   padding: 3rem 0;
-  min-height: 60vh;
+  min-height: 50vh;
   border-radius: 20px;
   width: 100%;
   display: flex;
@@ -876,19 +876,14 @@ button:hover {
     ),
     url("img/computer/java-code-small.jpg");
   background-size: cover;
-  background-attachment: fixed;
 }
 
-/* @media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
   .java-section {
-    min-height: 70vh;
-    background-image: linear-gradient(
-        rgba(66, 66, 66, 0.6),
-        rgba(10, 10, 10, 0.7)
-      ),
-      url("img/computer/java-code.jpg");
+    background-attachment: fixed;
+    min-height: 60vh;
   }
-} */
+}
 
 .java-section > .work-description > .skills {
   justify-content: center;
