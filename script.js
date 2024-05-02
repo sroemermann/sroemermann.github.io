@@ -48,7 +48,6 @@ onresize = (event) => {
 };
 
 
-
 // Light & dark mode toggle
 
 const moonPath = "M7.21127 12C7.21127 21.1636 16 23.4843 16 23.4843C14.8591 23.8197 13.6485 24 12.3944 24C5.54915 24 0 18.6274 0 12C0 5.37258 5.54915 0 12.3944 0C13.6485 0 14.8591 0.180332 16 0.515673C16 0.515673 7.21127 2.83636 7.21127 12Z";
@@ -99,19 +98,6 @@ modeMobile.addEventListener("click", () => {
         modeMobile.innerHTML = "Light mode";
     }
 });
-
-// modeMobile.addEventListener("click", () => {
-//     if (modeMobile.innerHTML === "Light mode") {
-//         root.classList.add("light-mode");
-//         modeMobile.innerHTML = "Dark mode";
-//         modeToggle = true;
-//     } else {
-//         modeMobile.innerHTML = "Light mode";
-//         root.classList.remove("light-mode");
-//         modeToggle = false;
-//     }
-// });
-
 
 
 // hero parallax scroll effect
@@ -166,15 +152,15 @@ heroObserver.observe(hero);
 // })
 
 // const ghostEle = document.createElement("section");
-// ghostEle.style.height = document.querySelector("body").scrollHeight + "px";
-// document.querySelector("body").after(ghostEle);
+// ghostEle.style.height = document.querySelector(".main").scrollHeight + "px";
+// document.querySelector(".main").after(ghostEle);
 
 // function animate() {
 //   requestAnimationFrame(animate);
 
 //   curScroll = curScroll + (easeSpeed * (moveDistance - curScroll));
 //   if (curScroll < 0.001) curScroll = 0;
-//   document.querySelector("body").style.transform = `translateY(${curScroll * -1}px)`
+//   document.querySelector(".main").style.transform = `translateY(${curScroll * -1}px)`
 // }
 // animate();
 
