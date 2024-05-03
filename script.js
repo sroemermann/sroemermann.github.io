@@ -10,8 +10,7 @@ const openNav = function() {
     mobileNav.classList.add("open");
     hamburger.classList.add("open");
     nav2.classList.add("nav-open");
-    // nav2.classList.add("scrolled");
-    // body.classList.add("fixed");
+    body.classList.add("fixed");
 };
 
 const closeNav = function() {
@@ -19,8 +18,7 @@ const closeNav = function() {
     mobileNav.classList.remove("open");
     hamburger.classList.remove("open");
     nav2.classList.remove("nav-open");
-    // nav2.classList.remove("scrolled");
-    // body.classList.remove("fixed");
+    body.classList.remove("fixed");
 }
 
 hamburger.addEventListener("click", () => {
@@ -65,7 +63,7 @@ const modeMobile = document.getElementById("light-mode-mobile");
 const root = document.documentElement;
 let modeToggle = false;
 
-mode.addEventListener("click", () => {
+const toggleDarkMode = function() {
     const modeTimeline = anime.timeline({
         duration : 750,
         easing: "easeOutExpo"
@@ -93,19 +91,10 @@ mode.addEventListener("click", () => {
         root.classList.remove("light-mode");
         modeMobile.innerHTML = "Light mode";
     }
-});
+}
 
-modeMobile.addEventListener("click", () => {
-    if(!modeToggle) {
-        modeToggle = true;
-        root.classList.add("light-mode");
-        modeMobile.innerHTML = "Dark mode";
-    } else {
-        modeToggle = false;
-        root.classList.remove("light-mode");
-        modeMobile.innerHTML = "Light mode";
-    }
-});
+mode.addEventListener("click", toggleDarkMode);
+modeMobile.addEventListener("click", toggleDarkMode);
 
 
 // hero parallax scroll effect
@@ -121,9 +110,9 @@ window.addEventListener("scroll", function() {
 
     if (w > 800) {
         bg.style.top = value * 1.05 + "px";
-        louis.style.top = value * 0.75 + "px";
+        louis.style.top = value * 0.8 + "px";
         bgg.style.top = value * 1 + "px";
-        ship.style.top = value * 0.98 + "px";
+        ship.style.top = value * 0.95 + "px";
     } else {
         bg.style.top = 0;
         louis.style.top = 0;
@@ -153,7 +142,6 @@ heroObserver.observe(hero);
 
 
 // Copy email
-
 
 const copyEmail = function () {
     navigator.clipboard.writeText("roemermann.steven@gmail.com");

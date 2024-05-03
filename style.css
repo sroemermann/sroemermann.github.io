@@ -95,12 +95,10 @@ a:hover {
 }
 
 .work-type {
-  color: var(--body-color);
+  /* color: var(--body-color); */
   font-size: 1rem;
   font-weight: 400;
   font-style: italic;
-  letter-spacing: 0rem;
-  /* text-transform: uppercase; */
 }
 
 .skills {
@@ -1047,9 +1045,16 @@ button:hover {
 
 .contact-louis {
   aspect-ratio: 1/1;
-  width: 260px;
-  height: 260px;
+  width: 180px;
+  height: 180px;
   /* animation: louis-float 32000ms infinite alternate ease; */
+}
+
+@media screen and (min-width: 800px) {
+  .contact-louis {
+    width: 280px;
+    height: 280px;
+  }
 }
 
 .social-icons {
