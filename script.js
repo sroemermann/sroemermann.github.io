@@ -5,19 +5,30 @@ const mobileNav = document.getElementById("mobile-nav");
 const body = document.querySelector("body");
 let navToggle = false;
 
+const openNav = function() {
+    navToggle = true;
+    mobileNav.classList.add("open");
+    hamburger.classList.add("open");
+    nav2.classList.add("nav-open");
+    // nav2.classList.add("scrolled");
+    // body.classList.add("fixed");
+};
+
+const closeNav = function() {
+    navToggle = false;
+    mobileNav.classList.remove("open");
+    hamburger.classList.remove("open");
+    nav2.classList.remove("nav-open");
+    // nav2.classList.remove("scrolled");
+    // body.classList.remove("fixed");
+}
+
 hamburger.addEventListener("click", () => {
     if (navToggle === false) {
-        mobileNav.classList.add("open");
-        hamburger.classList.add("open");
-        body.classList.add("fixed");
-        navToggle = true;
+        openNav();
     } else {
-        mobileNav.classList.remove("open");
-        hamburger.classList.remove("open");
-        navToggle = false;
-        body.classList.remove("fixed");
+        closeNav();
     }
-    
 });
 
 const links = document.querySelectorAll(".mobile-nav-list a");
@@ -25,15 +36,9 @@ const links = document.querySelectorAll(".mobile-nav-list a");
 links.forEach(l => {
     l.addEventListener("click", () => {
         if (navToggle === true) {
-            mobileNav.classList.remove("open");
-            hamburger.classList.remove("open");
-            navToggle = false;
-            body.classList.remove("fixed");
+            closeNav();
         } else {
-            mobileNav.classList.add("open");
-            hamburger.classList.add("open");
-            navToggle = true;
-            body.classList.remove("fixed");
+            openNav();
         }
 });
 });
@@ -45,10 +50,7 @@ onresize = (event) => {
     let w = window.innerWidth;
     if (w > 800) {
         if (navToggle === true) {
-            mobileNav.classList.remove("open");
-            hamburger.classList.remove("open");
-            navToggle = false;
-            body.classList.remove("fixed");
+            closeNav();
         } 
     }
 };
@@ -111,6 +113,7 @@ modeMobile.addEventListener("click", () => {
 const bg = document.getElementById("background");
 const louis = document.getElementById("louis");
 const bgg = document.getElementById("bg-g");
+const ship = document.getElementById("space-ship");
 
 window.addEventListener("scroll", function() {
     const value = this.window.scrollY;
@@ -119,11 +122,13 @@ window.addEventListener("scroll", function() {
     if (w > 800) {
         bg.style.top = value * 1.05 + "px";
         louis.style.top = value * 0.75 + "px";
-        bgg.style.top = value * 1 + "px";  
+        bgg.style.top = value * 1 + "px";
+        ship.style.top = value * 0.98 + "px";
     } else {
         bg.style.top = 0;
         louis.style.top = 0;
         bgg.style.top = 0;  
+        ship.style.top = 0; 
     }
 })
 
@@ -146,6 +151,14 @@ const heroObserver = new IntersectionObserver(function(entries, heroObserver) {e
 
 heroObserver.observe(hero);
 
+
+// Copy email
+
+
+const copyEmail = function () {
+    navigator.clipboard.writeText("roemermann.steven@gmail.com");
+    document.getElementById("copied").innerHTML = "Copied!";
+}
 
 // scroll ease
 

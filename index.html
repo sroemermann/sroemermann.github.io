@@ -38,7 +38,7 @@
                     <path 
                     class="sun" 
                     d="M24.2799 11.9968C24.2799 17.5883 20.4556 22.2866 15.2799 23.6187C14.3211 23.8655 13.3158 23.9968 12.2799 23.9968C5.65251 23.9968 0.279922 18.6242 0.279922 11.9968C0.279922 5.36938 5.65251 -0.00320435 12.2799 -0.00320435C13.3158 -0.00320435 14.3211 0.128055 15.2799 0.374848C20.4556 1.70698 24.2799 6.40528 24.2799 11.9968Z" 
-                    fill="#e8fa46"/>
+                    fill="#e5ff66"/>
                     </svg>
                 </li>
             </ul>
@@ -60,6 +60,7 @@
                         <img src="img/bg/stars-bg-3.png" alt="" class="stars-bg-3">
                     </div>
                 </div> 
+                <img id="space-ship" src="img/pug/ship.png" alt="space ship">
                 <img class="louis" id="louis" src="img/pug/louis.png" alt="pug wearing an astronaut helmet floating through space">
             </div>
             
@@ -71,6 +72,7 @@
             <div class="about-me" id="about-me">
                 <div class="bio-section">
                     <h2>About me</h2>
+                    <hr>
                     <h3>Hello! I'm Steven.</h2>
                     <p>I am a web developer with over a decade of experience in UI design and marketing. I design and build websites that are functional and accessible.</p>
                     <a href="#contact"><button class="contact-button">Contact me</button></a>
@@ -84,8 +86,12 @@
             <!-- WORK SECTION -->
             <div class="work-section">
                 <div class="work-section-intro" id="work">
-                    <h2>My work</h2>
-                    <p class="check-it-out">Check out some of my work below!</p>
+                    <div class="work-section-intro-container">
+                        <h2>My work</h2>
+                        <hr>
+                        <p class="check-it-out">Check out some of my work below!</p>
+                    </div>
+                    
                 </div>
     
                 <!-- BROADWAY PERIO -->
@@ -93,6 +99,7 @@
                     <div class="website-section">
                         <div class="website-description">
                             <p class="work-type">Website</p>
+                            <hr>
                             <h3>Broadway Perio</h3>
                             <p class="skills"><span class="skill">Branding</span><span class="skill">Design</span><span class="skill">Javascript</span><span class="skill">Wordpress</span></p>
                             <a href="https://broadwayperio.com" target="_blank"><button type="button">Check it out</button></a>
@@ -116,6 +123,7 @@
                     <div class="java-section">
                         <div class="work-description">
                             <p class="work-type">Java application</p>
+                            <hr>
                             <h3>Guitar Store</h3>
                             <p class="skills"><span class="skill">Java</span><span class="skill">SQL</span><span class="skill">UI Design</span></p>
                             <a href="https://github.com/sroemermann/java-project" target="_blank"><button type="button">Check it out</button></a>
@@ -132,15 +140,22 @@
             <div class="contact-section" id="contact">
                 <div class="contact">
                     <h2>Contact me</h2>
-                    <div class="contact-info">
-                        <p>Get in touch:</p>
-                        <p class="contact-links"><a href="mailto:roemermann.steven@gmail.com">roemermann.steven@gmail.com</a></p>
-                        <p class="social-icons">
+                    <hr>
+                    <div class="contact-info-block">
+                        <div class="contact-info">
+                            <p>Get in touch:</p>
+                            <p class="contact-links"><a href="mailto:roemermann.steven@gmail.com">roemermann.steven@gmail.com</a></p>
+                            <button onclick="copyEmail()" type="button">Copy email</button><span id="copied"></span>
+                            <p class="social-icons">
                             <a href="https://www.linkedin.com/in/sroemermann/" target="_blank" class="social-links"><i class="fa-brands fa-linkedin"></i></a>
                             <a href="https://github.com/sroemermann" target="_blank" class="social-links"><i class="fa-brands fa-github"></i></a>
                         </p>
-                        <img class="contact-louis" src="img/pug/louis.png" alt="pug wearing an astronaut helmet floating through space">
+                        </div>
+                        <div class="contact-louis-container">
+                            <img class="contact-louis" src="img/pug/louis.png" alt="pug wearing an astronaut helmet floating through space">
+                        </div>
                     </div>
+                    
                 </div>
             </div>
     

@@ -1,11 +1,11 @@
 :root {
   font-size: 16px;
 
-  --primary: #7afae5;
+  --primary: #84e4d4;
   --hover: #35ad99;
   --body-color: white;
   --bg-color: #151627;
-  --bg-color2: #1c2838;
+  --bg-color2: #1b2431;
   --dark-color: #36363b;
   --glow: #ffffffab;
 
@@ -60,7 +60,7 @@ body.fixed {
 
 h2 {
   color: var(--primary);
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 400;
   line-height: normal;
@@ -95,10 +95,12 @@ a:hover {
 }
 
 .work-type {
-  color: var(--primary);
+  color: var(--body-color);
   font-size: 1rem;
   font-weight: 400;
-  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 0rem;
+  /* text-transform: uppercase; */
 }
 
 .skills {
@@ -128,6 +130,14 @@ a:hover {
   .skill {
     font-size: 1rem;
   }
+}
+
+hr {
+  /* border: none; */
+  border-top: 0.3rem;
+  border-color: var(--primary);
+  width: 100%;
+  margin: 1rem 0 2rem;
 }
 
 /* ======
@@ -188,6 +198,11 @@ header.scrolled {
 }
 
 header.scrolled > nav > ul > li > a {
+  color: var(--primary);
+}
+
+header.nav-open,
+header.nav-open > nav > ul > li > a {
   color: var(--primary);
 }
 
@@ -276,6 +291,10 @@ svg {
 }
 
 header.scrolled > nav > #hamburger .line {
+  background-color: var(--primary);
+}
+
+header.nav-open > nav > #hamburger .line {
   background-color: var(--primary);
 }
 
@@ -560,11 +579,12 @@ button:hover {
 
 /* HERO FOREGROUND */
 
-.louis {
+#louis {
   position: relative;
+  left: 2rem;
   width: 100%;
   max-width: 700px;
-  z-index: 3;
+  z-index: 4;
   animation: louis-float 32000ms infinite alternate ease;
 }
 
@@ -583,6 +603,26 @@ button:hover {
   }
   100% {
     transform: rotate(5deg);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #louis {
+    left: 5rem;
+  }
+}
+
+#space-ship {
+  position: absolute;
+  height: 100%;
+  /* max-width: 300px; */
+  z-index: 3;
+  left: -10rem;
+}
+
+@media screen and (min-width: 600px) {
+  #space-ship {
+    left: -4rem;
   }
 }
 
@@ -675,7 +715,27 @@ button:hover {
   align-items: center;
   justify-content: center;
   /* background-color: var(--bg-color); */
-  padding: 4rem;
+  padding: 6rem 4rem 4rem;
+}
+
+@media screen and (min-width: 800px) {
+  .work-section-intro {
+    padding: 8rem 4rem 4rem;
+  }
+}
+
+.work-section-intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 800px) {
+  .work-section-intro-container {
+    width: 60%;
+    min-width: 400px;
+  }
 }
 
 .check-it-out {
@@ -808,7 +868,7 @@ button:hover {
   top: 0rem;
   border-radius: 5% / 7%;
   background: linear-gradient(90deg, #c6c6d5, #fdfdfd);
-  box-shadow: 0 0 2rem #0000003f;
+  box-shadow: 0 0 2rem #00000026;
 }
 
 .bevel {
@@ -885,13 +945,13 @@ button:hover {
 
 .guitar-store-section {
   /* background-color: var(--bg-color); */
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 4rem;
   /* min-height: 70vh; */
 }
 
 @media screen and (min-width: 800px) {
   .guitar-store-section {
-    padding: 4rem;
+    padding: 4rem 4rem 8rem;
     min-height: 70vh;
     margin: 0;
   }
@@ -957,7 +1017,7 @@ button:hover {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 @media screen and (min-width: 800px) {
@@ -966,30 +1026,54 @@ button:hover {
   }
 }
 
+.contact-info-block {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .contact-info {
 }
 
+.contact-louis-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  min-width: 300px;
+}
+
 .contact-louis {
-  width: 200px;
-  /* min-width: 200px; */
-  animation: louis-float 32000ms infinite alternate ease;
-  /* object-fit: cover; */
-  /* object-position: 100% -20%; */
+  aspect-ratio: 1/1;
+  width: 260px;
+  height: 260px;
+  /* animation: louis-float 32000ms infinite alternate ease; */
 }
 
 .social-icons {
   display: flex;
   flex-direction: row;
   /* color: var(--body-color); */
-  font-size: 2rem;
-  gap: 1rem;
+  font-size: 3rem;
+  gap: 2rem;
 }
 
 .contact-links {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 0;
   cursor: pointer;
   transition: all 500ms ease;
+}
+
+@media screen and (min-width: 600px) {
+  .contact-links {
+    font-size: 1.8rem;
+  }
+  .contact-links::after {
+    height: 0.2rem;
+  }
 }
 
 .contact-links::after {
@@ -1021,6 +1105,11 @@ button:hover {
 .contact-links:hover::after {
   width: 100%;
   transition: all 250ms ease;
+}
+
+#copied {
+  margin-left: 2rem;
+  font-style: italic;
 }
 
 .social-links {
