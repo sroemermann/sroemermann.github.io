@@ -2,17 +2,20 @@
 
 const hamburger = document.getElementById("hamburger");
 const mobileNav = document.getElementById("mobile-nav");
+const body = document.querySelector("body");
 let navToggle = false;
 
 hamburger.addEventListener("click", () => {
     if (navToggle === false) {
         mobileNav.classList.add("open");
         hamburger.classList.add("open");
+        body.classList.add("fixed");
         navToggle = true;
     } else {
         mobileNav.classList.remove("open");
         hamburger.classList.remove("open");
         navToggle = false;
+        body.classList.remove("fixed");
     }
     
 });
@@ -25,10 +28,12 @@ links.forEach(l => {
             mobileNav.classList.remove("open");
             hamburger.classList.remove("open");
             navToggle = false;
+            body.classList.remove("fixed");
         } else {
             mobileNav.classList.add("open");
             hamburger.classList.add("open");
             navToggle = true;
+            body.classList.remove("fixed");
         }
 });
 });
@@ -43,6 +48,7 @@ onresize = (event) => {
             mobileNav.classList.remove("open");
             hamburger.classList.remove("open");
             navToggle = false;
+            body.classList.remove("fixed");
         } 
     }
 };

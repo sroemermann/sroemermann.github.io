@@ -1,12 +1,13 @@
 :root {
   font-size: 16px;
 
-  background-color: #04072c;
-  --primary: #7adede;
+  --primary: #7afae5;
+  --hover: #35ad99;
   --body-color: white;
-  --bg-color: #131531;
-  --bg-color2: #122f3d;
-  --dark-color: #252846;
+  --bg-color: #151627;
+  --bg-color2: #1c2838;
+  --dark-color: #36363b;
+  --glow: #ffffffab;
 
   /* bg gradients */
   --grad1: #a93300;
@@ -17,6 +18,7 @@
 
 :root.light-mode {
   --primary: #28a1a1;
+  --hover: #0adada;
   --body-color: #4b4b4b;
   --bg-color: #f0f0f0;
   --bg-color2: #ffffff;
@@ -42,9 +44,14 @@ html {
 
 body {
   margin: 0;
+  background-color: var(--bg-color);
   color: var(--body-color);
   font-family: "Space Mono", sans-serif;
   font-size: 1rem;
+}
+
+body.fixed {
+  position: fixed;
 }
 
 /* ==========
@@ -77,12 +84,14 @@ h3 {
 }
 
 a {
-  /* color: var(--primary); */
+  color: var(--primary);
   text-decoration: none;
+  transition: color 250ms ease;
 }
 
 a:hover {
   color: var(--body-color);
+  transition: color 500ms ease;
 }
 
 .work-type {
@@ -99,7 +108,7 @@ a:hover {
   justify-content: center;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
   .skills {
     justify-content: flex-start;
   }
@@ -161,7 +170,7 @@ header > nav > ul > li > a {
 
 @media screen and (min-width: 800px) {
   header {
-    padding: 0 2rem;
+    padding: 0 4rem;
     height: 6rem;
   }
 }
@@ -216,8 +225,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: var(--body-color);
-  filter: drop-shadow(0 0 0.2em white);
+  color: #ffffff;
+  filter: drop-shadow(0 0 0.3em var(--glow));
   transition: all 500ms ease;
 }
 
@@ -228,12 +237,16 @@ nav ul li a::after {
   position: absolute;
   width: 0%;
   height: 0.15rem;
-  background-color: var(--body-color);
+  background-color: #ffffff;
   transition: all 350ms ease;
 }
 
 nav ul li a:hover::after {
   width: 100%;
+}
+
+header.scrolled > nav > ul > li > a::after {
+  background-color: var(--primary);
 }
 
 svg {
@@ -290,8 +303,7 @@ header.scrolled > nav > #hamburger .line {
   flex-direction: column;
   justify-content: center;
   z-index: 100;
-  /* background-color: var(--bg-color); */
-  background: linear-gradient(var(--bg-color) 25%, var(--bg-color2) 75%);
+  background: linear-gradient(var(--bg-color) 45%, var(--bg-color2) 85%);
   overflow-x: hidden;
   transition: all 500ms ease;
 }
@@ -320,6 +332,8 @@ header.scrolled > nav > #hamburger .line {
   line-height: 4rem;
 }
 
+/* separator lines */
+
 /* #mobile-nav-list li::after {
   display: flex;
   position: relative;
@@ -330,14 +344,12 @@ header.scrolled > nav > #hamburger .line {
 } */
 
 .mobile-nav-list > li > a {
-  color: var(--primary);
   cursor: pointer;
   transition: all 500ms ease;
 }
 
 .mobile-nav-list > li > a:hover {
-  color: var(--body-color);
-  filter: drop-shadow(0 0 0.2em white);
+  filter: drop-shadow(0 0 0.2em var(--glow));
   transition: all 500ms ease;
 }
 
@@ -348,13 +360,14 @@ header.scrolled > nav > #hamburger .line {
   position: absolute;
   width: 0%;
   height: 0.2rem;
-  bottom: 0.15rem;
+  bottom: 0rem;
   background-color: var(--body-color);
-  transition: all 350ms ease;
+  transition: all 500ms ease;
 }
 
 .mobile-nav-list > li > a:hover::after {
   width: 100%;
+  transition: all 250ms ease;
 }
 
 /* =======
@@ -362,6 +375,7 @@ header.scrolled > nav > #hamburger .line {
    ======= */
 
 button {
+  margin: 1rem 0;
   font-family: "Space Mono", monospace;
   background: var(--primary);
   color: var(--bg-color);
@@ -375,33 +389,40 @@ button {
 }
 
 button:hover {
-  background: var(--primary);
-  box-shadow: 0 0.25rem 0.01rem var(--body-color), 0 0 2rem #ffffff98 inset;
+  background: var(--hover);
+  box-shadow: 0 0.25rem 0.01rem var(--body-color);
   transform: translateY(-0.25rem);
   transition: all 250ms ease;
 }
 
 .contact-button {
-  font-size: 1.4rem;
-  padding: 0.7rem 2rem;
+  font-size: 1.2rem;
+  padding: 0.6rem 1.8rem;
   color: #ffffff;
   transition: all 500ms ease;
   border-radius: 6px;
-  animation: glow 8000ms infinite;
+  animation: glow 20000ms infinite;
 }
 
 @keyframes glow {
   0% {
-    background-color: #0e8bad;
+    background-color: #309c8a;
   }
   33% {
-    background-color: #7113c9;
+    background-color: #8f2ee9;
   }
   66% {
-    background-color: #402ec8;
+    background-color: #5a44e5;
   }
   100% {
-    background-color: #0e8bad;
+    background-color: #309c8a;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .contact-button {
+    font-size: 1.4rem;
+    padding: 0.7rem 2rem;
   }
 }
 
@@ -483,18 +504,15 @@ button:hover {
   width: 100%;
   object-fit: cover;
   transform-origin: 50% 50%;
-  animation: stars-rotate 45000ms ease-in-out alternate infinite;
+  animation: stars-rotate 30000ms ease alternate infinite;
 }
 
 @keyframes stars-rotate {
   0% {
-    transform: rotate(-5deg);
-  }
-  50% {
-    transform: rotate(5deg);
+    transform: rotate(-4deg);
   }
   100% {
-    transform: rotate(-5deg);
+    transform: rotate(4deg);
   }
 }
 
@@ -514,11 +532,25 @@ button:hover {
   top: 0%;
   left: 0%;
   z-index: -1;
-  animation: stars2 5000ms infinite alternate ease-in-out;
+  animation: stars2 7000ms infinite alternate ease-in-out;
+}
+
+.stars-bg-3 {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  animation: stars2 10000ms infinite alternate-reverse ease-in-out;
 }
 
 @keyframes stars2 {
   0% {
+    opacity: 0;
+  }
+  75% {
     opacity: 0;
   }
   100% {
@@ -530,10 +562,10 @@ button:hover {
 
 .louis {
   position: relative;
-  width: 80%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 700px;
   z-index: 3;
-  animation: louis-float 18000ms infinite alternate ease;
+  animation: louis-float 32000ms infinite alternate ease;
 }
 
 @keyframes louis-float {
@@ -541,13 +573,13 @@ button:hover {
     transform: rotate(5deg);
   }
   25% {
-    transform: translateY(-2rem);
+    transform: translateY(-1rem);
   }
   50% {
     transform: rotate(-5deg);
   }
   75% {
-    transform: translateY(2rem);
+    transform: translateY(1rem);
   }
   100% {
     transform: rotate(5deg);
@@ -599,11 +631,9 @@ button:hover {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 2rem;
   width: 100%;
-  max-width: 1600px;
   margin: 0 auto;
-  height: 100%;
+  min-height: 70vh;
 }
 
 @media screen and (min-width: 600px) {
@@ -612,10 +642,10 @@ button:hover {
   }
 
   .bio-section {
-    text-align: center;
+    /* text-align: center; */
     justify-content: center;
-    align-items: center;
-    max-width: 70vw;
+    align-items: flex-start;
+    padding: 2rem;
   }
 
   .section-header {
@@ -627,13 +657,24 @@ button:hover {
    WORK SECTION
    ============ */
 
+.work-section {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--bg-color2) 0px,
+    var(--bg-color2) 1.5px,
+    var(--bg-color) 1.5px,
+    var(--bg-color) 16px
+  );
+  background-attachment: fixed;
+}
+
 .work-section-intro {
   min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-color);
+  /* background-color: var(--bg-color); */
   padding: 4rem;
 }
 
@@ -644,55 +685,44 @@ button:hover {
   font-style: italic;
 }
 
-/* .check-it-out::before,
-.check-it-out::after {
-  position: absolute;
-  content: "";
-  background-color: var(--body-color);
-} */
-
 /* BROADWAY PERIO SECTION  */
 
 .broadway-perio-section {
-  background-color: var(--bg-color);
   padding: 2rem 1rem;
   min-height: 70vh;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
   .broadway-perio-section {
-    padding: 2rem;
+    padding: 4rem;
     min-height: 80vh;
     margin: 0;
   }
 }
 
 .website-section {
-  padding: 3rem 0;
+  padding: 3rem;
   min-height: 70vh;
   border-radius: 20px;
-  gap: 2rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  /* background: var(--bg-color2); */
-  background: repeating-linear-gradient(
-    135deg,
-    var(--bg-color2) 0px,
-    var(--bg-color2) 2.5px,
-    transparent 2.5px,
-    transparent 20px
-  );
-  background-attachment: fixed;
+  background: var(--bg-color);
+}
+
+@media screen and (min-width: 800px) {
+  .website-section {
+    border-radius: 40px;
+    min-height: 80vh;
+  }
 }
 
 @media screen and (min-width: 1000px) {
   .website-section {
     flex-direction: row;
-    min-height: 80vh;
   }
 }
 
@@ -717,7 +747,7 @@ button:hover {
 
 .computer {
   position: relative;
-  width: clamp(330px, 80%, 900px);
+  width: clamp(300px, 80%, 900px);
   aspect-ratio: 4 / 3;
   display: flex;
   flex-direction: column;
@@ -776,14 +806,15 @@ button:hover {
   height: 90%;
   z-index: 1;
   top: 0rem;
-  border-radius: 4% / 6%;
+  border-radius: 5% / 7%;
   background: linear-gradient(90deg, #c6c6d5, #fdfdfd);
-  box-shadow: 0 0 3rem #04072c2f;
+  box-shadow: 0 0 2rem #0000003f;
 }
 
 .bevel {
   display: flex;
-  background: var(--dark-color);
+  /* background: var(--dark-color); */
+  background: linear-gradient(135deg, #414141, #232323 50%, #303030);
   overflow: auto;
   aspect-ratio: 1.8 / 1;
   width: 100%;
@@ -810,7 +841,7 @@ button:hover {
   width: 5%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: var(--dark-color);
+  background: #3c3c3c;
   margin: 3% auto;
 }
 
@@ -853,14 +884,14 @@ button:hover {
 /* JAVA APPLICATION SECTION */
 
 .guitar-store-section {
-  background-color: var(--bg-color);
+  /* background-color: var(--bg-color); */
   padding: 2rem 1rem;
   /* min-height: 70vh; */
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
   .guitar-store-section {
-    padding: 2rem;
+    padding: 4rem;
     min-height: 70vh;
     margin: 0;
   }
@@ -879,16 +910,17 @@ button:hover {
   justify-content: center;
   text-align: center;
   background-image: linear-gradient(
-      rgba(66, 66, 66, 0.6),
-      rgba(10, 10, 10, 0.7)
+      rgba(80, 80, 80, 0.6),
+      rgba(60, 60, 60, 0.6)
     ),
     url("img/computer/java-code-small.jpg");
   background-size: cover;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
   .java-section {
     background-attachment: fixed;
+    border-radius: 40px;
     min-height: 60vh;
   }
 }
@@ -902,9 +934,13 @@ button:hover {
    =============== */
 
 .contact-section {
-  min-height: 60vh;
-  padding: 2rem;
   background-color: var(--bg-color);
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: var(--bg-color); */
 }
 
 @media screen and (min-width: 800px) {
@@ -915,12 +951,82 @@ button:hover {
 }
 
 .contact {
-  height: 100%;
-  padding: 2rem;
+  min-height: 60vh;
+  padding: 0rem;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+@media screen and (min-width: 800px) {
+  .contact {
+    padding: 2rem;
+  }
+}
+
+.contact-info {
+}
+
+.contact-louis {
+  width: 200px;
+  /* min-width: 200px; */
+  animation: louis-float 32000ms infinite alternate ease;
+  /* object-fit: cover; */
+  /* object-position: 100% -20%; */
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  /* color: var(--body-color); */
+  font-size: 2rem;
+  gap: 1rem;
+}
+
+.contact-links {
+  font-size: 1.2rem;
+  margin: 0;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.contact-links::after {
+  content: "";
+  display: flex;
+  align-self: center;
+  position: absolute;
+  width: 0%;
+  height: 0.1rem;
+  bottom: 0rem;
+  background-color: var(--body-color);
+  transition: all 500ms ease;
+}
+
+@media screen and (min-width: 800px) {
+  .contact-links {
+    font-size: 2.2rem;
+  }
+  .contact-links::after {
+    height: 0.2rem;
+  }
+}
+
+.contact-links:hover {
+  filter: drop-shadow(0 0 0.2em var(--glow));
+  transition: filter 500ms ease;
+}
+
+.contact-links:hover::after {
+  width: 100%;
+  transition: all 250ms ease;
+}
+
+.social-links {
+  color: var(--body-color);
+}
+
+.social-links:hover {
+  color: var(--primary);
 }
