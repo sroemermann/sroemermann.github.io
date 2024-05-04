@@ -46,10 +46,19 @@ body {
   color: var(--body-color);
   font-family: "Space Mono", sans-serif;
   font-size: 1rem;
+  overscroll-behavior-y: none;
 }
 
 body.fixed {
   position: fixed;
+}
+
+hr {
+  /* border: none; */
+  border-top: 0.2rem;
+  border-color: var(--primary);
+  width: 100%;
+  margin: 1rem 0 2rem;
 }
 
 /* ==========
@@ -126,14 +135,6 @@ a:hover {
   .skill {
     font-size: 1rem;
   }
-}
-
-hr {
-  /* border: none; */
-  border-top: 0.2rem;
-  border-color: var(--primary);
-  width: 100%;
-  margin: 1rem 0 2rem;
 }
 
 /* ======
@@ -394,7 +395,7 @@ button {
 
 button:hover {
   background: var(--primary);
-  box-shadow: 0 0.25rem 0.01rem var(--body-color);
+  box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.5rem var(--glow);
   transform: translateY(-0.25rem);
   transition: all 250ms ease;
   color: var(--bg-color);
@@ -426,12 +427,11 @@ button:hover {
 }
 
 .contact-button:hover {
-  /* transform: none; */
   color: var(--bg-color);
   transition: all 250ms ease;
   animation: none;
   background-color: var(--primary);
-  box-shadow: 0 0.25rem 0.01rem var(--body-color);
+  box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.75rem var(--glow);
 }
 
 /* ============
@@ -1025,7 +1025,6 @@ button:hover {
 
 .contact-louis-container {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-grow: 1;
   min-width: 300px;
@@ -1035,14 +1034,6 @@ button:hover {
   aspect-ratio: 1/1;
   width: 180px;
   height: 180px;
-  /* animation: louis-float 32000ms infinite alternate ease; */
-}
-
-@media screen and (min-width: 800px) {
-  .contact-louis {
-    width: 280px;
-    height: 280px;
-  }
 }
 
 .social-icons {

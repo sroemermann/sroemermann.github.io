@@ -122,7 +122,7 @@ const nav2 = document.querySelector("header");
 const hero = document.getElementById("hero");
 
 const heroOptions = {
-    rootMargin: "-20px 0px 0px 0px"
+    rootMargin: "-100px 0px 0px 0px"
 };
 
 const heroObserver = new IntersectionObserver(function(entries, heroObserver) {entries.forEach(entry => { if(!entry.isIntersecting) {
