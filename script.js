@@ -10,7 +10,7 @@ const openNav = function() {
     mobileNav.classList.add("open");
     hamburger.classList.add("open");
     nav2.classList.add("nav-open");
-    body.classList.add("fixed");
+    // body.classList.add("fixed");
 };
 
 const closeNav = function() {
@@ -18,27 +18,22 @@ const closeNav = function() {
     mobileNav.classList.remove("open");
     hamburger.classList.remove("open");
     nav2.classList.remove("nav-open");
-    body.classList.remove("fixed");
+    // body.classList.remove("fixed");
 }
 
 hamburger.addEventListener("click", () => {
-    if (navToggle === false) {
-        openNav();
-    } else {
-        closeNav();
-    }
+    !navToggle ? openNav() : closeNav();
 });
 
 const links = document.querySelectorAll(".mobile-nav-list a");
 
+
+// Close nav when one of the links are clicked
+
 links.forEach(l => {
     l.addEventListener("click", () => {
-        if (navToggle === true) {
-            closeNav();
-        } else {
-            openNav();
-        }
-});
+        navToggle ? closeNav() : openNav();
+    });
 });
 
 
@@ -46,11 +41,10 @@ links.forEach(l => {
 
 onresize = (event) => {
     let w = window.innerWidth;
-    if (w > 800) {
-        if (navToggle === true) {
-            closeNav();
-        } 
-    }
+
+    if ((w > 800) && (navToggle === true)) {
+        closeNav();
+    } 
 };
 
 
@@ -97,7 +91,7 @@ mode.addEventListener("click", toggleDarkMode);
 modeMobile.addEventListener("click", toggleDarkMode);
 
 
-// hero parallax scroll effect
+// Hero parallax scroll effect
 
 const bg = document.getElementById("background");
 const louis = document.getElementById("louis");
@@ -109,10 +103,10 @@ window.addEventListener("scroll", function() {
     let w = window.innerWidth;
 
     if (w > 800) {
-        bg.style.top = value * 1.05 + "px";
-        louis.style.top = value * 0.8 + "px";
+        bg.style.top = value * 1.03 + "px";
+        louis.style.top = value * 0.9 + "px";
         bgg.style.top = value * 1 + "px";
-        ship.style.top = value * 0.95 + "px";
+        ship.style.top = value * 0.98 + "px";
     } else {
         bg.style.top = 0;
         louis.style.top = 0;
@@ -128,7 +122,7 @@ const nav2 = document.querySelector("header");
 const hero = document.getElementById("hero");
 
 const heroOptions = {
-    rootMargin: "-50px 0px 0px 0px"
+    rootMargin: "-20px 0px 0px 0px"
 };
 
 const heroObserver = new IntersectionObserver(function(entries, heroObserver) {entries.forEach(entry => { if(!entry.isIntersecting) {

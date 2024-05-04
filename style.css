@@ -2,11 +2,10 @@
   font-size: 16px;
 
   --primary: #84e4d4;
-  --hover: #35ad99;
+  --secondary: #5a44e5;
   --body-color: white;
   --bg-color: #151627;
   --bg-color2: #1b2431;
-  --dark-color: #36363b;
   --glow: #ffffffab;
 
   /* bg gradients */
@@ -18,15 +17,14 @@
 
 :root.light-mode {
   --primary: #28a1a1;
-  --hover: #0adada;
+  --secondary: #5a44e5;
   --body-color: #4b4b4b;
   --bg-color: #f0f0f0;
   --bg-color2: #ffffff;
-  --dark-color: #3c3c43;
 
   /* bg gradients */
-  --grad1: #fd7a5f;
-  --grad2: #a4b320;
+  --grad1: #fd795fad;
+  --grad2: #a4b320e7;
   --grad3: #ffffff;
   --grad4: #ffffff;
 }
@@ -232,7 +230,6 @@ nav ul {
 
 nav ul li a {
   transition: all 500ms ease;
-  /* color: var(--primary); */
   cursor: pointer;
   margin: 0;
 }
@@ -245,17 +242,18 @@ nav ul li a:hover {
 
 nav ul li a::after {
   content: "";
-  display: flex;
-  align-self: center;
   position: absolute;
-  width: 0%;
-  height: 0.15rem;
+  width: 100%;
+  height: 0.1rem;
   background-color: #ffffff;
   transition: all 350ms ease;
+  transform: scale(0, 1);
+  bottom: 0;
+  left: 0;
 }
 
 nav ul li a:hover::after {
-  width: 100%;
+  transform: scale(1, 1);
 }
 
 header.scrolled > nav > ul > li > a::after {
@@ -313,7 +311,7 @@ header.nav-open > nav > #hamburger .line {
 
 #mobile-nav {
   height: 0;
-  width: 100vw;
+  width: 100%;
   top: 0;
   position: fixed;
   display: flex;
@@ -349,17 +347,6 @@ header.nav-open > nav > #hamburger .line {
   line-height: 4rem;
 }
 
-/* separator lines */
-
-/* #mobile-nav-list li::after {
-  display: flex;
-  position: relative;
-  content: "";
-  width: 100%;
-  height: 0.1rem;
-  color: var(--body-color);
-} */
-
 .mobile-nav-list > li > a {
   cursor: pointer;
   transition: all 500ms ease;
@@ -372,18 +359,18 @@ header.nav-open > nav > #hamburger .line {
 
 .mobile-nav-list > li > a::after {
   content: "";
-  display: flex;
-  align-self: center;
   position: absolute;
-  width: 0%;
+  width: 100%;
   height: 0.2rem;
+  left: 0;
   bottom: 0rem;
   background-color: var(--body-color);
   transition: all 500ms ease;
+  transform: scale(0, 1);
 }
 
 .mobile-nav-list > li > a:hover::after {
-  width: 100%;
+  transform: scale(1, 1);
   transition: all 250ms ease;
 }
 
@@ -394,8 +381,8 @@ header.nav-open > nav > #hamburger .line {
 button {
   margin: 1rem 0;
   font-family: "Space Mono", monospace;
-  background: var(--primary);
-  color: var(--bg-color);
+  background: var(--secondary);
+  color: #ffffff;
   text-transform: uppercase;
   font-size: 1.1rem;
   transition: all 500ms ease;
@@ -406,10 +393,11 @@ button {
 }
 
 button:hover {
-  background: var(--hover);
+  background: var(--primary);
   box-shadow: 0 0.25rem 0.01rem var(--body-color);
   transform: translateY(-0.25rem);
   transition: all 250ms ease;
+  color: var(--bg-color);
 }
 
 .contact-button {
@@ -418,21 +406,15 @@ button:hover {
   color: #ffffff;
   transition: all 500ms ease;
   border-radius: 6px;
-  animation: glow 20000ms infinite;
+  animation: glow 4000ms alternate infinite;
 }
 
 @keyframes glow {
   0% {
-    background-color: #309c8a;
-  }
-  33% {
-    background-color: #8f2ee9;
-  }
-  66% {
-    background-color: #5a44e5;
+    background-color: var(--primary);
   }
   100% {
-    background-color: #309c8a;
+    background-color: var(--secondary);
   }
 }
 
@@ -521,7 +503,7 @@ button:hover {
   width: 100%;
   object-fit: cover;
   transform-origin: 50% 50%;
-  animation: stars-rotate 30000ms ease alternate infinite;
+  animation: stars-rotate 20000ms ease-in-out alternate infinite;
 }
 
 @keyframes stars-rotate {
@@ -579,7 +561,6 @@ button:hover {
 
 #louis {
   position: relative;
-  left: 2rem;
   width: 100%;
   max-width: 700px;
   z-index: 4;
@@ -613,14 +594,15 @@ button:hover {
 #space-ship {
   position: absolute;
   height: 100%;
-  /* max-width: 300px; */
+  /* width: 1000px; */
   z-index: 3;
-  left: -10rem;
+  left: -16rem;
 }
 
 @media screen and (min-width: 600px) {
   #space-ship {
     left: -4rem;
+    width: 1000px;
   }
 }
 
@@ -631,7 +613,7 @@ button:hover {
 .wave-wrapper {
   width: 110vw;
   height: 38rem;
-  /* filter: drop-shadow(0 -1.5rem 0.5rem rgba(255, 255, 255, 0.5)); */
+  filter: drop-shadow(0 1rem 2rem var(--primary));
   position: relative;
   bottom: 0rem;
   z-index: 5;
@@ -767,7 +749,7 @@ button:hover {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background: var(--bg-color);
 }
 
@@ -796,6 +778,7 @@ button:hover {
     margin: 2rem;
     width: 30vw;
     text-align: left;
+    max-width: 430px;
   }
 }
 
@@ -871,8 +854,13 @@ button:hover {
 
 .bevel {
   display: flex;
-  /* background: var(--dark-color); */
-  background: linear-gradient(135deg, #414141, #232323 50%, #303030);
+  background: linear-gradient(
+    135deg,
+    #414141,
+    #1f1f1f 45%,
+    #1f1f1f 55%,
+    #414141
+  );
   overflow: auto;
   aspect-ratio: 1.8 / 1;
   width: 100%;
@@ -1086,9 +1074,11 @@ button:hover {
   display: flex;
   align-self: center;
   position: absolute;
-  width: 0%;
+  width: 100%;
   height: 0.1rem;
-  bottom: 0rem;
+  transform: scale(0, 1);
+  bottom: 0;
+  left: 0;
   background-color: var(--body-color);
   transition: all 500ms ease;
 }
@@ -1108,8 +1098,8 @@ button:hover {
 }
 
 .contact-links:hover::after {
-  width: 100%;
   transition: all 250ms ease;
+  transform: scale(1, 1);
 }
 
 #copied {
