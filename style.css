@@ -3,10 +3,10 @@
 
   --primary: #84e4d4;
   --secondary: #5a44e5;
-  --body-color: white;
+  --body-color: #ffffff;
   --bg-color: #151627;
-  --bg-color2: #1b2431;
-  --glow: #ffffffab;
+  --bg-color2: #1a1c29;
+  --glow: #ffffff9b;
 
   /* bg gradients */
   --grad1: #a93300;
@@ -16,9 +16,10 @@
 }
 
 :root.light-mode {
-  --primary: #28a1a1;
-  --body-color: #0e0c0c;
-  --bg-color: #f0f0f0;
+  /* --primary: #28a1a1; */
+  --primary: #489689;
+  --body-color: #757575;
+  --bg-color: #f7f7f7;
   --bg-color2: #ffffff;
 
   /* bg gradients */
@@ -46,6 +47,7 @@ body {
   font-family: "Space Mono", sans-serif;
   font-size: 1rem;
   overscroll-behavior-y: none;
+  line-height: 1.8;
 }
 
 body.fixed {
@@ -53,11 +55,17 @@ body.fixed {
 }
 
 hr {
-  /* border: none; */
-  border-top: 0.2rem;
-  border-color: var(--primary);
+  border: none;
+  background-color: var(--body-color);
+  height: 0.025rem;
   width: 100%;
   margin: 1rem 0 2rem;
+}
+
+.thick {
+  border: none;
+  background-color: var(--primary);
+  height: 0.15rem;
 }
 
 /* ==========
@@ -69,24 +77,33 @@ h2 {
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 400;
-  line-height: normal;
+  line-height: 1.2;
   margin: 0;
 }
 
 h3 {
-  font-size: 2rem;
+  font-family: "Jaro", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 @media screen and (min-width: 600px) {
   h3 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
   h3 {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
+}
+
+h4 {
+  font-size: 1.4rem;
+  /* color: var(--primary); */
+  font-weight: 400;
 }
 
 a {
@@ -216,7 +233,7 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 2rem;
+  gap: 2.6rem;
   justify-content: space-between;
   line-height: normal;
   text-transform: uppercase;
@@ -229,6 +246,7 @@ nav ul {
 }
 
 nav ul li a {
+  font-size: 0.9rem;
   transition: all 500ms ease;
   cursor: pointer;
   margin: 0;
@@ -398,7 +416,7 @@ header.nav-open > nav > #hamburger .line {
 .styled-button:hover {
   background: var(--primary);
   box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.4rem var(--glow),
-    0 0 0.5rem var(--glow) inset;
+    0 0 1rem var(--glow) inset;
   transform: translateY(-0.25rem);
   transition: all 250ms ease;
   color: var(--bg-color);
@@ -571,15 +589,9 @@ header.nav-open > nav > #hamburger .line {
   0% {
     /* transform: rotate(5deg); */
   }
-  25% {
-    /* transform: translateY(-1rem); */
-  }
   50% {
-    transform: rotate(10deg) translateX(-1rem);
+    transform: rotate(10deg);
   }
-  /* 75% {
-    transform: translateY(1rem);
-  } */
   100% {
     transform: rotate(0deg);
   }
@@ -655,6 +667,7 @@ header.nav-open > nav > #hamburger .line {
   width: 100%;
   margin: 0 auto;
   min-height: 70vh;
+  /* max-width: 1200px; */
 }
 
 @media screen and (min-width: 600px) {
@@ -667,10 +680,29 @@ header.nav-open > nav > #hamburger .line {
     align-items: flex-start;
     padding: 2rem;
   }
+}
 
-  .section-header {
-    column-span: 2;
+.website-qualities {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .website-qualities {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
   }
+}
+
+.website-quality {
+}
+
+.contact-jump-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto;
 }
 
 /* ============
@@ -681,15 +713,15 @@ header.nav-open > nav > #hamburger .line {
   background: repeating-linear-gradient(
     135deg,
     var(--bg-color2) 0px,
-    var(--bg-color2) 3px,
-    var(--bg-color) 3px,
-    var(--bg-color) 16px
+    var(--bg-color2) 2px,
+    var(--bg-color) 2px,
+    var(--bg-color) 18px
   );
   background-attachment: fixed;
 }
 
 .work-section-intro {
-  min-height: 40vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -787,7 +819,7 @@ header.nav-open > nav > #hamburger .line {
 
 .computer {
   position: relative;
-  width: clamp(300px, 80%, 900px);
+  width: clamp(300px, 90%, 900px);
   aspect-ratio: 4 / 3;
   display: flex;
   flex-direction: column;
@@ -797,43 +829,6 @@ header.nav-open > nav > #hamburger .line {
   margin: 2rem;
   gap: unset;
 }
-
-@media screen and (min-width: 1000px) {
-  .computer {
-    /* width: clamp(42rem, 50vw, 54rem); */
-    /* top: 4rem; */
-  }
-}
-
-/* .computer::before,
-.computer::after {
-  position: absolute;
-  content: "";
-  background: black;
-  width: 30%;
-  height: 20%;
-}
-.computer::before {
-  top: 20%;
-  left: 25%;
-  box-shadow: -4em -2em 8em #fff98b;
-}
-.computer::after {
-  bottom: 45%;
-  right: 30%;
-  box-shadow: 4em 2em 8em #fff98b;
-}
-
-@media screen and (min-width: 1000px) {
-  .computer::before {
-    top: 18%;
-    left: 18%;
-  }
-  .computer::after {
-    bottom: 38%;
-    right: 25%;
-  }
-} */
 
 .monitor {
   position: relative;
@@ -950,7 +945,7 @@ header.nav-open > nav > #hamburger .line {
 .java-section {
   color: #ffffff;
   padding: 3rem 0;
-  min-height: 50vh;
+  min-height: 60vh;
   border-radius: 20px;
   width: 100%;
   display: flex;
@@ -990,7 +985,7 @@ header.nav-open > nav > #hamburger .line {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: var(--bg-color); */
+  align-items: center;
 }
 
 @media screen and (min-width: 800px) {
@@ -1002,6 +997,8 @@ header.nav-open > nav > #hamburger .line {
 
 .contact {
   min-height: 60vh;
+  width: 100%;
+  /* max-width: 1200px; */
   padding: 0rem;
   display: flex;
   flex-direction: column;
@@ -1014,6 +1011,10 @@ header.nav-open > nav > #hamburger .line {
   .contact {
     padding: 2rem;
   }
+}
+
+.contact-me-header {
+  width: 100%;
 }
 
 .contact-info-block {
@@ -1039,7 +1040,6 @@ header.nav-open > nav > #hamburger .line {
   width: 160px;
   height: 160px;
   background-color: var(--secondary);
-  /* object-fit: cover; */
   background-image: url("img/pug/louis.png");
   background-position: 44% 11%;
   background-size: 209%;
@@ -1050,7 +1050,6 @@ header.nav-open > nav > #hamburger .line {
 .social-icons {
   display: flex;
   flex-direction: row;
-  /* color: var(--body-color); */
   font-size: 3rem;
   gap: 2rem;
 }
