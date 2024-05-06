@@ -10,10 +10,7 @@
     <script src="https://kit.fontawesome.com/e3b558134f.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    </style>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
-    </style>     
+    </style>   
 </head>
 
 <body>
@@ -23,7 +20,7 @@
         <div>
             <h1>Steven Roemermann</h1>
         </div>
-        <nav>
+        <nav role="navigation" aria-label="Main menu">
             <ul>
                 <li><a href="#about-me">About</a></li>
                 <li><a href="#work">Work</a></li>
@@ -42,10 +39,10 @@
                     </svg>
                 </li>
             </ul>
-            <div id="hamburger">
+            <button id="hamburger">
                 <div class="line line-1"></div>
                 <div class="line line-2"></div>
-            </div>
+            </button>
         </nav>
     </header>
 
@@ -75,7 +72,7 @@
                     <hr>
                     <h3>Hello! I'm Steven.</h2>
                     <p>I am a web developer with over a decade of experience in UI design and marketing. I design and build websites that are functional and accessible.</p>
-                    <a href="#contact"><button class="contact-button">Contact me</button></a>
+                    <a href="#contact"><button class="styled-button contact-button">Contact me</button></a>
                 </div>
             </div>
         </div>
@@ -102,13 +99,13 @@
                             <hr>
                             <h3>Broadway Perio</h3>
                             <p class="skills"><span class="skill">Design</span><span class="skill">Wordpress</span><span class="skill">Branding</span><span class="skill">Javascript</span></p>
-                            <a href="https://broadwayperio.com" target="_blank"><button type="button">Check it out</button></a>
+                            <a href="https://broadwayperio.com" target="_blank"><button class="styled-button" type="button">Check it out</button></a>
                             
                         </div>
                         <div class="computer">
                             <div class="monitor">
                                 <div class="bevel">
-                                    <div class="screen"></div>
+                                    <div id="bp-screen"></div>
                                 </div>
                                 <div class="computer-logo"></div>
                             </div>
@@ -125,10 +122,9 @@
                             <p class="work-type">Java application</p>
                             <hr>
                             <h3>Guitar Store</h3>
-                            <p class="skills"><span class="skill">Java</span><span class="skill">SQL</span><span class="skill">UI Design</span></p>
-                            <a href="https://github.com/sroemermann/java-project" target="_blank"><button type="button">Check it out</button></a>
+                            <p class="skills"><span class="skill">Java</span><span class="skill">SQL</span><span class="skill">Swing</span><span class="skill">UI Design</span></p>
+                            <a href="https://github.com/sroemermann/java-project" target="_blank"><button class="styled-button" type="button">Check it out</button></a>
                         </div>
-                        <div class="work-image"></div>
                     </div>
                     
                      
@@ -144,15 +140,15 @@
                     <div class="contact-info-block">
                         <div class="contact-info">
                             <p>Get in touch:</p>
-                            <p class="contact-links"><a href="mailto:roemermann.steven@gmail.com">roemermann.steven@gmail.com</a></p>
-                            <button onclick="copyEmail()" type="button">Copy email</button><span id="copied"></span>
+                            <p id="contact-email" aria-hidden="true"><a href="mailto:roemermann.steven@gmail.com">email</a></p>
+                            <button class="styled-button" onclick="copyEmail()" type="button">Copy email</button><span id="copied"></span>
                             <p class="social-icons">
                             <a href="https://www.linkedin.com/in/sroemermann/" target="_blank" class="social-links"><i class="fa-brands fa-linkedin"></i></a>
                             <a href="https://github.com/sroemermann" target="_blank" class="social-links"><i class="fa-brands fa-github"></i></a>
-                        </p>
+                            </p>
                         </div>
                         <div class="contact-louis-container">
-                            <img class="contact-louis" src="img/pug/louis.png" alt="pug wearing an astronaut helmet floating through space">
+                            <div class="contact-louis"></div>
                         </div>
                     </div>
                     

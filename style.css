@@ -17,8 +17,7 @@
 
 :root.light-mode {
   --primary: #28a1a1;
-  --secondary: #5a44e5;
-  --body-color: #4b4b4b;
+  --body-color: #0e0c0c;
   --bg-color: #f0f0f0;
   --bg-color2: #ffffff;
 
@@ -133,7 +132,7 @@ a:hover {
 
 @media screen and (min-width: 800px) {
   .skill {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -277,6 +276,8 @@ svg {
   width: 2.4rem;
   height: 1.9rem;
   padding: 0;
+  background: none;
+  border: none;
 }
 
 #hamburger .line {
@@ -319,7 +320,8 @@ header.nav-open > nav > #hamburger .line {
   flex-direction: column;
   justify-content: center;
   z-index: 100;
-  background: linear-gradient(var(--bg-color) 45%, var(--bg-color2) 85%);
+  background: var(--bg-color);
+  /* background: linear-gradient(var(--bg-color) 45%, var(--bg-color2) 85%); */
   overflow-x: hidden;
   transition: all 500ms ease;
 }
@@ -379,23 +381,24 @@ header.nav-open > nav > #hamburger .line {
    BUTTONS
    ======= */
 
-button {
+.styled-button {
   margin: 1rem 0;
   font-family: "Space Mono", monospace;
   background: var(--secondary);
   color: #ffffff;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: all 500ms ease;
-  padding: 0.4rem 1.2rem;
+  padding: 0.4rem 1.4rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-button:hover {
+.styled-button:hover {
   background: var(--primary);
-  box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.5rem var(--glow);
+  box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.4rem var(--glow),
+    0 0 0.5rem var(--glow) inset;
   transform: translateY(-0.25rem);
   transition: all 250ms ease;
   color: var(--bg-color);
@@ -403,19 +406,17 @@ button:hover {
 
 .contact-button {
   font-size: 1.2rem;
-  padding: 0.6rem 1.8rem;
-  color: #ffffff;
-  transition: all 500ms ease;
+  padding: 0.6rem 2.2rem;
   border-radius: 6px;
-  animation: glow 4000ms alternate infinite;
+  animation: glow 4000ms alternate infinite ease-in-out;
 }
 
 @keyframes glow {
   0% {
-    background-color: var(--primary);
+    background-color: var(--secondary);
   }
   100% {
-    background-color: var(--secondary);
+    background-color: #9000ff;
   }
 }
 
@@ -427,11 +428,10 @@ button:hover {
 }
 
 .contact-button:hover {
-  color: var(--bg-color);
-  transition: all 250ms ease;
   animation: none;
   background-color: var(--primary);
-  box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.75rem var(--glow);
+  box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.5rem var(--glow),
+    0 0 0.4rem var(--glow) inset;
 }
 
 /* ============
@@ -561,27 +561,27 @@ button:hover {
 
 #louis {
   position: relative;
-  width: 100%;
-  max-width: 700px;
+  width: 75%;
+  max-width: 500px;
   z-index: 4;
-  animation: louis-float 32000ms infinite alternate ease;
+  animation: louis-float 20000ms infinite alternate ease-in-out;
 }
 
 @keyframes louis-float {
   0% {
-    transform: rotate(5deg);
+    /* transform: rotate(5deg); */
   }
   25% {
-    transform: translateY(-1rem);
+    /* transform: translateY(-1rem); */
   }
   50% {
-    transform: rotate(-5deg);
+    transform: rotate(10deg) translateX(-1rem);
   }
-  75% {
+  /* 75% {
     transform: translateY(1rem);
-  }
+  } */
   100% {
-    transform: rotate(5deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -593,16 +593,17 @@ button:hover {
 
 #space-ship {
   position: absolute;
-  height: 100%;
-  /* width: 1000px; */
+  height: 50%;
   z-index: 3;
-  left: -16rem;
+  top: 0;
+  left: -4rem;
 }
 
 @media screen and (min-width: 600px) {
   #space-ship {
-    left: -4rem;
+    left: 5%;
     width: 1000px;
+    height: 100%;
   }
 }
 
@@ -662,7 +663,6 @@ button:hover {
   }
 
   .bio-section {
-    /* text-align: center; */
     justify-content: center;
     align-items: flex-start;
     padding: 2rem;
@@ -681,8 +681,8 @@ button:hover {
   background: repeating-linear-gradient(
     135deg,
     var(--bg-color2) 0px,
-    var(--bg-color2) 1.5px,
-    var(--bg-color) 1.5px,
+    var(--bg-color2) 3px,
+    var(--bg-color) 3px,
     var(--bg-color) 16px
   );
   background-attachment: fixed;
@@ -694,7 +694,6 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-color: var(--bg-color); */
   padding: 6rem 4rem 4rem;
 }
 
@@ -735,7 +734,7 @@ button:hover {
 @media screen and (min-width: 800px) {
   .broadway-perio-section {
     padding: 4rem;
-    min-height: 80vh;
+    min-height: 90vh;
     margin: 0;
   }
 }
@@ -756,7 +755,7 @@ button:hover {
 @media screen and (min-width: 800px) {
   .website-section {
     border-radius: 40px;
-    min-height: 80vh;
+    min-height: 100vh;
   }
 }
 
@@ -872,7 +871,7 @@ button:hover {
   justify-content: center;
 }
 
-.screen {
+#bp-screen {
   position: static;
   width: 91%;
   height: 84%;
@@ -881,6 +880,11 @@ button:hover {
   background-image: url("./img/computer/bp-hero.jpg");
   background-size: cover;
   border-radius: 2px;
+}
+
+#bp-screen.fadeOut {
+  opacity: 0;
+  transition: opacity ease 350ms;
 }
 
 .computer-logo {
@@ -1032,8 +1036,15 @@ button:hover {
 
 .contact-louis {
   aspect-ratio: 1/1;
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
+  background-color: var(--secondary);
+  /* object-fit: cover; */
+  background-image: url("img/pug/louis.png");
+  background-position: 44% 11%;
+  background-size: 209%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
 }
 
 .social-icons {
@@ -1044,23 +1055,15 @@ button:hover {
   gap: 2rem;
 }
 
-.contact-links {
+#contact-email {
   font-size: 1.3rem;
   margin: 0;
   cursor: pointer;
   transition: all 500ms ease;
+  color: var(--primary);
 }
 
-@media screen and (min-width: 600px) {
-  .contact-links {
-    font-size: 1.8rem;
-  }
-  .contact-links::after {
-    height: 0.2rem;
-  }
-}
-
-.contact-links::after {
+#contact-email::after {
   content: "";
   display: flex;
   align-self: center;
@@ -1074,21 +1077,28 @@ button:hover {
   transition: all 500ms ease;
 }
 
-@media screen and (min-width: 800px) {
-  .contact-links {
-    font-size: 2.2rem;
+@media screen and (min-width: 600px) {
+  #contact-email {
+    font-size: 1.8rem;
   }
-  .contact-links::after {
+  #contact-email::after {
     height: 0.2rem;
   }
 }
 
-.contact-links:hover {
-  filter: drop-shadow(0 0 0.2em var(--glow));
-  transition: filter 500ms ease;
+@media screen and (min-width: 800px) {
+  #contact-email {
+    font-size: 2.2rem;
+  }
 }
 
-.contact-links:hover::after {
+#contact-email:hover {
+  filter: drop-shadow(0 0 0.2em var(--glow));
+  transition: all 500ms ease;
+  color: var(--body-color);
+}
+
+#contact-email:hover::after {
   transition: all 250ms ease;
   transform: scale(1, 1);
 }

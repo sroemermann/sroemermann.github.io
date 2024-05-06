@@ -142,6 +142,40 @@ const copyEmail = function () {
     document.getElementById("copied").innerHTML = "Copied!";
 }
 
+
+// Add email address to page
+document.getElementById("contact-email").innerHTML = "roemermann.steven@gmail.com";
+
+
+// Broadway Perio screen slideshow
+
+// const screen = document.getElementById("bp-screen");
+// const images = [];
+// const slideTime = 3000;
+// let i = 0;
+
+// images[0] = 'img/computer/java-code.jpg';
+// images[1] = 'img/computer/java-code.jpg';
+// images[2] = 'img/computer/bp-hero.jpg';
+
+// function changePicture() {
+//     screen.style.backgroundImage = "url(" + images[i] + ")";
+
+//     if (i < images.length - 1) {
+//         i++;
+//         screen.classList.add("fadeOut");
+//     } else {
+//         i = 0;
+//         console.log(i);
+//     }
+
+//     setTimeout("changePicture()", slideTime);
+// }
+
+// window.onload = changePicture;
+
+
+
 // scroll ease
 
 // const easeSpeed = 0.1;
