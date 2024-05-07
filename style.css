@@ -1,12 +1,12 @@
 :root {
-  font-size: 16px;
+  font-size: 18px;
 
   --primary: #84e4d4;
   --secondary: #5a44e5;
   --body-color: #f6f6f6;
   /* --bg-color: #151627; */
   --bg-color: #15172a;
-  --bg-color2: #1a1c2f;
+  --bg-color2: #1a1d36;
   --glow: #ffffff9b;
   --grad1: #803cd6;
   --grad2: #250d5f;
@@ -14,7 +14,8 @@
 
 :root.light-mode {
   /* --primary: #28a1a1; */
-  --primary: #489689;
+  /* --primary: #489689; */
+  --primary: #397f7e;
   --body-color: #313459;
   /* --body-color: #757575; */
   --bg-color: #f6f6f6;
@@ -58,7 +59,6 @@ hr {
 
 .thick {
   border: none;
-  /* background-color: var(--body-color); */
   height: 0.1rem;
 }
 
@@ -70,8 +70,9 @@ h2 {
   color: var(--primary);
   font-size: 1rem;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 100;
   line-height: 1;
+  letter-spacing: 0.2rem;
   margin: 0;
 }
 
@@ -387,7 +388,7 @@ header.nav-open > nav > #hamburger .line {
   height: 0.2rem;
   left: 0;
   bottom: 0rem;
-  background-color: var(--body-color);
+  background-color: var(--primary);
   transition: all 500ms ease;
   transform: scale(0, 1);
 }
@@ -395,6 +396,7 @@ header.nav-open > nav > #hamburger .line {
 .mobile-nav-list > li > a:hover::after {
   transform: scale(1, 1);
   transition: all 250ms ease;
+  background-color: var(--body-color);
 }
 
 /* =======
@@ -417,7 +419,7 @@ header.nav-open > nav > #hamburger .line {
 
 .styled-button:hover,
 .styled-button:focus {
-  background: var(--body-color);
+  background: var(--primary);
   /* box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.4rem var(--glow); */
   box-shadow: 0 0.25rem 0.01rem var(--secondary);
   transform: translateY(-0.25rem);
@@ -460,7 +462,7 @@ header.nav-open > nav > #hamburger .line {
   content: "";
   position: absolute;
   background: var(--secondary);
-  top: 2rem;
+  top: 3rem;
   left: 0;
   width: 100%;
   height: 34%;
@@ -578,7 +580,7 @@ radial-gradient(
 #louis {
   position: relative;
   width: 80%;
-  max-width: 600px;
+  max-width: 540px;
   z-index: 4;
   animation: louis-float 15000ms infinite alternate ease-in-out;
 }
@@ -634,7 +636,7 @@ radial-gradient(
 .wave-wrapper {
   width: 110vw;
   height: 38rem;
-  filter: drop-shadow(0 1rem 2rem var(--primary));
+  filter: drop-shadow(0 1rem 2rem var(--grad1));
   position: relative;
   bottom: 0rem;
   z-index: 5;
@@ -670,7 +672,7 @@ radial-gradient(
 .bio-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   width: 100%;
   margin: 0 auto;
@@ -868,10 +870,10 @@ radial-gradient(
   display: flex;
   background: linear-gradient(
     135deg,
-    #414141,
-    #1f1f1f 45%,
-    #1f1f1f 55%,
-    #414141
+    #51536a,
+    #393c55 40%,
+    #393c55 60%,
+    #51536a
   );
   overflow: auto;
   aspect-ratio: 1.8 / 1;
@@ -904,7 +906,7 @@ radial-gradient(
   width: 5%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: #3c3c3c;
+  background: #393c55;
   margin: 3% auto;
 }
 
@@ -973,7 +975,7 @@ radial-gradient(
   justify-content: center;
   text-align: center;
   background-image: linear-gradient(
-      rgba(80, 80, 80, 0.6),
+      rgba(60, 60, 60, 0.6),
       rgba(60, 60, 60, 0.6)
     ),
     url("img/computer/java-code-small.jpg");
@@ -999,7 +1001,7 @@ radial-gradient(
 .contact-section {
   background-color: var(--bg-color);
   min-height: 60vh;
-  padding: 1rem;
+  padding: 4rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1008,7 +1010,7 @@ radial-gradient(
 
 @media screen and (min-width: 800px) {
   .contact-section {
-    padding: 2rem;
+    padding: 4rem 2rem;
   }
 }
 
@@ -1069,6 +1071,7 @@ radial-gradient(
   background-size: 225%;
   background-repeat: no-repeat;
   border-radius: 50%;
+  margin: 2rem;
 }
 
 .social-icons {
@@ -1083,7 +1086,7 @@ radial-gradient(
   margin: 0;
   cursor: pointer;
   transition: all 500ms ease;
-  color: var(--primary);
+  color: var(--body-color);
 }
 
 #contact-email::after {
@@ -1118,12 +1121,13 @@ radial-gradient(
 #contact-email:hover {
   filter: drop-shadow(0 0 0.15em var(--glow));
   transition: all 500ms ease;
-  color: var(--body-color);
+  color: var(--primary);
 }
 
 #contact-email:hover::after {
   transition: all 250ms ease;
   transform: scale(1, 1);
+  background-color: var(--primary);
 }
 
 #copied {
