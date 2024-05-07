@@ -19,7 +19,7 @@ const closeNav = function() {
     hamburger.classList.remove("open");
     nav2.classList.remove("nav-open");
     // body.classList.remove("fixed");
-}
+};
 
 hamburger.addEventListener("click", () => {
     !navToggle ? openNav() : closeNav();
@@ -31,10 +31,9 @@ const links = document.querySelectorAll(".mobile-nav-list a");
 // Close nav when one of the links are clicked
 
 links.forEach(l => {
-    l.addEventListener("click", () => {
-        navToggle ? closeNav() : openNav();
+    l.addEventListener("click", () => closeNav());
     });
-});
+
 
 
 // Close mobile menu if window resized > 800px

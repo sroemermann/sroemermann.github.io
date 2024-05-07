@@ -51,7 +51,7 @@ body.fixed {
 
 hr {
   border: none;
-  background-color: var(--primary);
+  background-color: var(--body-color);
   height: 0.025rem;
   width: 100%;
   margin: 1rem 0 2rem;
@@ -59,7 +59,8 @@ hr {
 
 .thick {
   border: none;
-  height: 0.1rem;
+  background-color: var(--primary);
+  height: 0.08rem;
 }
 
 /* ==========
@@ -70,19 +71,21 @@ h2 {
   color: var(--primary);
   font-size: 1rem;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   margin: 0;
 }
 
 h3 {
-  font-family: "Jersey 10", sans-serif;
+  font-family: "Jersey 15", sans-serif;
   /* color: var(--body-color); */
   font-size: 3rem;
   font-weight: 100;
   line-height: 0.9;
   margin: 4rem 0 2rem;
+  letter-spacing: 0.1rem;
+  filter: drop-shadow(0.2rem 0.2rem 0 var(--grad1));
 }
 
 @media screen and (min-width: 600px) {
@@ -99,7 +102,7 @@ h3 {
 
 h4 {
   font-size: 1.6rem;
-  color: var(--primary);
+  /* color: var(--primary); */
   font-weight: 400;
   margin: 0;
 }
@@ -432,7 +435,7 @@ header.nav-open > nav > #hamburger .line {
   position: relative;
   padding: 0.6rem 2.6rem;
   border-radius: 6px;
-  animation: glow 3500ms alternate infinite ease-in-out;
+  animation: glow 3000ms alternate infinite ease-in-out;
 }
 
 @keyframes glow {
@@ -440,7 +443,8 @@ header.nav-open > nav > #hamburger .line {
     background-color: var(--secondary);
   }
   100% {
-    background-color: #b01cfa;
+    /* background-color: #b01cfa; */
+    background-color: var(--grad1);
   }
 }
 
@@ -555,7 +559,7 @@ radial-gradient(
   width: 100%;
   object-fit: cover;
   transform-origin: 50% 50%;
-  animation: stars-rotate 25000ms ease alternate infinite;
+  animation: stars-rotate 30000ms ease alternate infinite;
 }
 
 @keyframes stars-rotate {
@@ -615,7 +619,7 @@ radial-gradient(
   z-index: 3;
   top: 0;
   left: -4rem;
-  animation: spaceship-float 1000ms infinite alternate ease-in-out;
+  animation: spaceship-float 2000ms infinite alternate ease-in-out;
 }
 
 @keyframes spaceship-float {
@@ -875,8 +879,8 @@ radial-gradient(
   background: linear-gradient(
     135deg,
     #51536a,
-    #393c55 40%,
-    #393c55 60%,
+    #1a1d38 35%,
+    #1a1d38 65%,
     #51536a
   );
   overflow: auto;
@@ -1048,9 +1052,6 @@ radial-gradient(
   justify-content: space-between;
 }
 
-.contact-info {
-}
-
 .contact-louis-container {
   display: flex;
   justify-content: center;
@@ -1101,7 +1102,7 @@ radial-gradient(
   width: 100%;
   height: 0.1rem;
   transform: scale(0, 1);
-  bottom: 0;
+  bottom: 0.4rem;
   left: 0;
   background-color: var(--body-color);
   transition: all 500ms ease;
@@ -1141,9 +1142,11 @@ radial-gradient(
 
 .social-links {
   color: var(--body-color);
+  transition: all 350ms ease;
 }
 
 .social-links:hover {
   color: var(--primary);
   filter: drop-shadow(0 0 0.25rem var(--glow));
+  transition: all 350ms ease;
 }
