@@ -92,27 +92,44 @@ modeMobile.addEventListener("click", toggleDarkMode);
 
 // Hero parallax scroll effect
 
+
+
 const bg = document.getElementById("background");
 const louis = document.getElementById("louis");
 const bgg = document.getElementById("bg-g");
 const ship = document.getElementById("space-ship");
 
-window.addEventListener("scroll", function() {
-    const value = this.window.scrollY;
-    let w = window.innerWidth;
+const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-    if (w > 800) {
+if (!mediaQuery || mediaQuery.matches) {
+    bg.style.top = 0;
+    louis.style.top = 0;
+    bgg.style.top = 0;  
+    ship.style.top = 0; 
+} else {
+    window.addEventListener("scroll", function() {
+        const value = this.window.scrollY;
+        let w = window.innerWidth;
+
         bg.style.top = value * 1.04 + "px";
         louis.style.top = value * 0.75 + "px";
         bgg.style.top = value * 1 + "px";
         ship.style.top = value * 0.9 + "px";
-    } else {
-        bg.style.top = 0;
-        louis.style.top = 0;
-        bgg.style.top = 0;  
-        ship.style.top = 0; 
-    }
-})
+    
+        // if (w > 800) {
+        //     bg.style.top = value * 1.04 + "px";
+        //     louis.style.top = value * 0.75 + "px";
+        //     bgg.style.top = value * 1 + "px";
+        //     ship.style.top = value * 0.9 + "px";
+        // } else {
+        //     bg.style.top = 0;
+        //     louis.style.top = 0;
+        //     bgg.style.top = 0;  
+        //     ship.style.top = 0; 
+        // }
+    })
+
+}
 
 
 // change nav styling when at top of window 

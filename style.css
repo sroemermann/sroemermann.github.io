@@ -4,7 +4,6 @@
   --primary: #84e4d4;
   --secondary: #5a44e5;
   --body-color: #f6f6f6;
-  /* --bg-color: #151627; */
   --bg-color: #15172a;
   --bg-color2: #1a1d36;
   --glow: #ffffff9b;
@@ -13,11 +12,9 @@
 }
 
 :root.light-mode {
-  /* --primary: #28a1a1; */
+  --primary: #28a1a1;
   /* --primary: #489689; */
-  --primary: #397f7e;
   --body-color: #313459;
-  /* --body-color: #757575; */
   --bg-color: #f6f6f6;
   --bg-color2: #ffffff;
   --grad1: #c08ee5;
@@ -33,6 +30,12 @@
 html {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -533,6 +536,12 @@ radial-gradient(
   }
 }
 
+@media (prefers-reduced-motion) {
+  .hero {
+    margin-bottom: -16rem;
+  }
+}
+
 .background {
   position: absolute;
   height: 100%;
@@ -562,6 +571,12 @@ radial-gradient(
   animation: stars-rotate 30000ms ease alternate infinite;
 }
 
+@media (prefers-reduced-motion) {
+  .stars {
+    animation: none;
+  }
+}
+
 @keyframes stars-rotate {
   0% {
     transform: rotate(-5deg);
@@ -587,6 +602,12 @@ radial-gradient(
   max-width: 540px;
   z-index: 4;
   animation: louis-float 20000ms infinite alternate ease-in-out;
+}
+
+@media (prefers-reduced-motion) {
+  #louis {
+    animation: none;
+  }
 }
 
 @keyframes louis-float {
@@ -620,6 +641,12 @@ radial-gradient(
   top: 0;
   left: -4rem;
   animation: spaceship-float 2000ms infinite alternate ease-in-out;
+}
+
+@media (prefers-reduced-motion) {
+  #space-ship {
+    animation: none;
+  }
 }
 
 @keyframes spaceship-float {
@@ -743,7 +770,7 @@ radial-gradient(
     var(--bg-color2) 0px,
     var(--bg-color2) 2px,
     var(--bg-color) 2px,
-    var(--bg-color) 18px
+    var(--bg-color) 22px
   );
   background-attachment: fixed;
 }
@@ -994,7 +1021,7 @@ radial-gradient(
   .java-section {
     background-attachment: fixed;
     border-radius: 40px;
-    min-height: 60vh;
+    min-height: 70vh;
   }
 }
 
@@ -1087,7 +1114,7 @@ radial-gradient(
 }
 
 #contact-email {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin: 0;
   cursor: pointer;
   transition: all 500ms ease;
