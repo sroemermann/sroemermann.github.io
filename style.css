@@ -3,9 +3,10 @@
 
   --primary: #84e4d4;
   --secondary: #5a44e5;
-  --body-color: #ffffff;
-  --bg-color: #151627;
-  --bg-color2: #1a1c29;
+  --body-color: #f6f6f6;
+  /* --bg-color: #151627; */
+  --bg-color: #15172a;
+  --bg-color2: #1a1c2f;
   --glow: #ffffff9b;
   --grad1: #803cd6;
   --grad2: #250d5f;
@@ -14,8 +15,9 @@
 :root.light-mode {
   /* --primary: #28a1a1; */
   --primary: #489689;
-  --body-color: #757575;
-  --bg-color: #f7f7f7;
+  --body-color: #313459;
+  /* --body-color: #757575; */
+  --bg-color: #f6f6f6;
   --bg-color2: #ffffff;
   --grad1: #c08ee5;
   --grad2: #5633c9;
@@ -39,7 +41,7 @@ body {
   font-family: "Space Mono", sans-serif;
   font-size: 1rem;
   overscroll-behavior-y: none;
-  line-height: 1.8;
+  line-height: 2;
 }
 
 body.fixed {
@@ -48,7 +50,7 @@ body.fixed {
 
 hr {
   border: none;
-  background-color: var(--body-color);
+  background-color: var(--primary);
   height: 0.025rem;
   width: 100%;
   margin: 1rem 0 2rem;
@@ -56,8 +58,8 @@ hr {
 
 .thick {
   border: none;
-  background-color: var(--primary);
-  height: 0.15rem;
+  /* background-color: var(--body-color); */
+  height: 0.1rem;
 }
 
 /* ==========
@@ -66,36 +68,39 @@ hr {
 
 h2 {
   color: var(--primary);
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1;
   margin: 0;
 }
 
 h3 {
-  font-family: "Jaro", sans-serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-family: "Jersey 10", sans-serif;
+  /* color: var(--body-color); */
+  font-size: 3rem;
+  font-weight: 100;
+  line-height: 0.9;
+  margin: 4rem 0 2rem;
 }
 
 @media screen and (min-width: 600px) {
   h3 {
-    font-size: 2.8rem;
+    font-size: 4rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
   h3 {
-    font-size: 3.2rem;
+    font-size: 5rem;
   }
 }
 
 h4 {
-  font-size: 1.4rem;
-  /* color: var(--primary); */
+  font-size: 1.6rem;
+  color: var(--primary);
   font-weight: 400;
+  margin: 0;
 }
 
 a {
@@ -134,8 +139,8 @@ a:hover {
   font-size: 0.8rem;
   border: var(--primary) solid 0.05rem;
   color: var(--primary);
-  border-radius: 6px;
-  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
   margin: 0.3rem 0.5rem 0.3rem 0;
 }
 
@@ -143,6 +148,10 @@ a:hover {
   .skill {
     font-size: 0.9rem;
   }
+}
+
+.centered {
+  text-align: center;
 }
 
 /* ======
@@ -244,7 +253,8 @@ nav ul li a {
   margin: 0;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:focus {
   color: #ffffff;
   filter: drop-shadow(0 0 0.3em var(--glow));
   transition: all 500ms ease;
@@ -405,9 +415,11 @@ header.nav-open > nav > #hamburger .line {
   cursor: pointer;
 }
 
-.styled-button:hover {
-  background: var(--primary);
-  box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.4rem var(--glow);
+.styled-button:hover,
+.styled-button:focus {
+  background: var(--body-color);
+  /* box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.4rem var(--glow); */
+  box-shadow: 0 0.25rem 0.01rem var(--secondary);
   transform: translateY(-0.25rem);
   transition: all 250ms ease;
   color: var(--bg-color);
@@ -415,9 +427,10 @@ header.nav-open > nav > #hamburger .line {
 
 .contact-button {
   font-size: 1.2rem;
-  padding: 0.6rem 2.2rem;
+  position: relative;
+  padding: 0.6rem 2.6rem;
   border-radius: 6px;
-  animation: glow 4000ms alternate infinite ease-in-out;
+  animation: glow 3500ms alternate infinite ease-in-out;
 }
 
 @keyframes glow {
@@ -425,7 +438,7 @@ header.nav-open > nav > #hamburger .line {
     background-color: var(--secondary);
   }
   100% {
-    background-color: #9000ff;
+    background-color: #b01cfa;
   }
 }
 
@@ -436,10 +449,33 @@ header.nav-open > nav > #hamburger .line {
   }
 }
 
-.contact-button:hover {
+.contact-button:hover,
+.contact-button:focus {
   animation: none;
   background-color: var(--primary);
   box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.5rem var(--glow);
+}
+
+.contact-button::after {
+  content: "";
+  position: absolute;
+  background: var(--secondary);
+  top: 2rem;
+  left: 0;
+  width: 100%;
+  height: 34%;
+  transform: perspective(5em) rotateX(35deg);
+  filter: blur(1.5rem);
+  z-index: -1;
+  opacity: 0.7;
+  transition: all 350ms ease;
+}
+
+.contact-button:hover::after {
+  background: var(--primary);
+  transform: perspective(5em) rotateX(35deg) translateY(0.25rem);
+  opacity: 1;
+  transition: all 350ms ease;
 }
 
 /* ============
@@ -517,7 +553,7 @@ radial-gradient(
   width: 100%;
   object-fit: cover;
   transform-origin: 50% 50%;
-  animation: stars-rotate 20000ms ease-in-out alternate infinite;
+  animation: stars-rotate 25000ms ease-in-out alternate infinite;
 }
 
 @keyframes stars-rotate {
@@ -537,48 +573,14 @@ radial-gradient(
   width: 100%;
 }
 
-.stars-bg-2 {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  z-index: -1;
-  animation: stars2 7000ms infinite alternate ease-in-out;
-}
-
-.stars-bg-3 {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  z-index: -1;
-  animation: stars2 10000ms infinite alternate-reverse ease-in-out;
-}
-
-@keyframes stars2 {
-  0% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 /* HERO FOREGROUND */
 
 #louis {
   position: relative;
-  width: 75%;
-  max-width: 500px;
+  width: 80%;
+  max-width: 600px;
   z-index: 4;
-  animation: louis-float 20000ms infinite alternate ease-in-out;
+  animation: louis-float 15000ms infinite alternate ease-in-out;
 }
 
 @keyframes louis-float {
@@ -586,7 +588,7 @@ radial-gradient(
     /* transform: rotate(5deg); */
   }
   50% {
-    transform: rotate(10deg);
+    transform: rotate(7deg);
   }
   100% {
     transform: rotate(0deg);
@@ -605,6 +607,16 @@ radial-gradient(
   z-index: 3;
   top: 0;
   left: -4rem;
+  animation: spaceship-float 1000ms infinite alternate ease-in-out;
+}
+
+@keyframes spaceship-float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-0.5rem);
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -680,17 +692,27 @@ radial-gradient(
 
 .website-qualities {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
+  margin: 2rem auto;
 }
 
 @media screen and (min-width: 1000px) {
   .website-qualities {
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    /* gap: 2rem; */
   }
 }
 
 .website-quality {
+  background-color: var(--bg-color2);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .website-quality {
+    padding: 2rem;
+  }
 }
 
 .contact-jump-link {
@@ -698,7 +720,7 @@ radial-gradient(
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 3rem auto;
+  margin: 3rem auto 6rem;
 }
 
 /* ============
@@ -976,7 +998,7 @@ radial-gradient(
 
 .contact-section {
   background-color: var(--bg-color);
-  min-height: 100vh;
+  min-height: 60vh;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -987,7 +1009,6 @@ radial-gradient(
 @media screen and (min-width: 800px) {
   .contact-section {
     padding: 2rem;
-    height: 100vh;
   }
 }
 
@@ -1031,14 +1052,21 @@ radial-gradient(
   min-width: 300px;
 }
 
+@media screen and (min-width: 1100px) {
+  .contact-louis-container {
+    justify-content: flex-end;
+    transition: all 250ms ease;
+  }
+}
+
 .contact-louis {
   aspect-ratio: 1/1;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   background-color: var(--secondary);
   background-image: url("img/pug/louis.png");
-  background-position: 44% 11%;
-  background-size: 209%;
+  background-position: 44% 14%;
+  background-size: 225%;
   background-repeat: no-repeat;
   border-radius: 50%;
 }
@@ -1088,7 +1116,7 @@ radial-gradient(
 }
 
 #contact-email:hover {
-  filter: drop-shadow(0 0 0.2em var(--glow));
+  filter: drop-shadow(0 0 0.15em var(--glow));
   transition: all 500ms ease;
   color: var(--body-color);
 }
@@ -1109,4 +1137,5 @@ radial-gradient(
 
 .social-links:hover {
   color: var(--primary);
+  filter: drop-shadow(0 0 0.25rem var(--glow));
 }

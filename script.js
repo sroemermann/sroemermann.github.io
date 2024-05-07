@@ -104,7 +104,7 @@ window.addEventListener("scroll", function() {
 
     if (w > 800) {
         bg.style.top = value * 1.03 + "px";
-        louis.style.top = value * 0.9 + "px";
+        louis.style.top = value * 0.8 + "px";
         bgg.style.top = value * 1 + "px";
         ship.style.top = value * 0.98 + "px";
     } else {
