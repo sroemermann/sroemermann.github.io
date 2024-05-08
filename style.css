@@ -795,6 +795,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   margin: 3rem auto 6rem;
+  min-height: 25vh;
 }
 
 /* ============
@@ -805,15 +806,15 @@ button:hover {
   background: repeating-linear-gradient(
     135deg,
     var(--bg-color2) 0px,
-    var(--bg-color2) 2px,
-    var(--bg-color) 2px,
+    var(--bg-color2) 3px,
+    var(--bg-color) 3px,
     var(--bg-color) 22px
   );
   background-attachment: fixed;
+  padding: 2rem 0;
 }
 
 .work-section-intro {
-  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -851,14 +852,14 @@ button:hover {
 
 /* BROADWAY PERIO SECTION  */
 
-.broadway-perio-section {
+.portfolio-section {
   padding: 2rem 1rem;
   min-height: 70vh;
 }
 
 @media screen and (min-width: 800px) {
-  .broadway-perio-section {
-    padding: 4rem;
+  .portfolio-section {
+    padding: 6rem 4rem;
     min-height: 90vh;
     margin: 0;
   }
@@ -1029,19 +1030,21 @@ button:hover {
 
 /* JAVA APPLICATION SECTION */
 
-.guitar-store-section {
-  /* background-color: var(--bg-color); */
-  padding: 2rem 1rem 4rem;
-  /* min-height: 70vh; */
+/*
+.website-description {
+  text-align: center;
+  top: 0;
+  z-index: 50;
+  margin: 0 auto;
 }
 
-@media screen and (min-width: 800px) {
-  .guitar-store-section {
-    padding: 4rem 4rem 8rem;
-    min-height: 70vh;
-    margin: 0;
-  }
-}
+@media screen and (min-width: 1200px) {
+  .website-description {
+    margin: 2rem;
+    width: 30vw;
+    text-align: left;
+    max-width: 430px;
+  } */
 
 .java-section {
   color: #ffffff;
@@ -1072,11 +1075,8 @@ button:hover {
 }
 
 .work-description {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  text-align: center;
+  margin: 0 auto;
   color: #ffffff;
 }
 
@@ -1158,7 +1158,6 @@ button:hover {
   background-size: 225%;
   background-repeat: no-repeat;
   border-radius: 50%;
-  margin: 2rem;
 }
 
 .social-icons {
