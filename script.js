@@ -2,7 +2,6 @@
 
 const hamburger = document.getElementById("hamburger");
 const mobileNav = document.getElementById("mobile-nav");
-const body = document.querySelector("body");
 let navToggle = false;
 
 const openNav = function() {
@@ -10,7 +9,6 @@ const openNav = function() {
     mobileNav.classList.add("open");
     hamburger.classList.add("open");
     nav2.classList.add("nav-open");
-    // body.classList.add("fixed");
 };
 
 const closeNav = function() {
@@ -18,7 +16,6 @@ const closeNav = function() {
     mobileNav.classList.remove("open");
     hamburger.classList.remove("open");
     nav2.classList.remove("nav-open");
-    // body.classList.remove("fixed");
 };
 
 hamburger.addEventListener("click", () => {
@@ -98,7 +95,6 @@ const bg = document.getElementById("background");
 const louis = document.getElementById("louis");
 const bgg = document.getElementById("bg-g");
 const ship = document.getElementById("space-ship");
-
 const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (!mediaQuery || mediaQuery.matches) {
@@ -111,11 +107,16 @@ if (!mediaQuery || mediaQuery.matches) {
         const value = this.window.scrollY;
         let w = window.innerWidth;
 
+        bg.style.top = value * 1.04 + "px";
+        louis.style.top = value * 0.75 + "px";
+        bgg.style.top = value * 1 + "px";
+        ship.style.top = value * 0.9 + "px";
+
         // if (w > 800) {
-            bg.style.top = value * 1.04 + "px";
-            louis.style.top = value * 0.75 + "px";
-            bgg.style.top = value * 1 + "px";
-            ship.style.top = value * 0.9 + "px";
+        //     bg.style.top = value * 1.04 + "px";
+        //     louis.style.top = value * 0.75 + "px";
+        //     bgg.style.top = value * 1 + "px";
+        //     ship.style.top = value * 0.9 + "px";
         // } else {
         //     bg.style.top = 0;
         //     louis.style.top = 0;
@@ -185,29 +186,4 @@ document.getElementById("contact-email").innerHTML = "roemermann.steven@gmail.co
 // }
 
 // window.onload = changePicture;
-
-
-
-// scroll ease
-
-// const easeSpeed = 0.1;
-// let moveDistance = 0,
-//   curScroll = 0;
-
-// document.addEventListener("scroll", () => {
-//   moveDistance = window.scrollY
-// })
-
-// const ghostEle = document.createElement("section");
-// ghostEle.style.height = document.querySelector(".main").scrollHeight + "px";
-// document.querySelector(".main").after(ghostEle);
-
-// function animate() {
-//   requestAnimationFrame(animate);
-
-//   curScroll = curScroll + (easeSpeed * (moveDistance - curScroll));
-//   if (curScroll < 0.001) curScroll = 0;
-//   document.querySelector(".main").style.transform = `translateY(${curScroll * -1}px)`
-// }
-// animate();
 

@@ -15,7 +15,6 @@
 </head>
 
 <body>
-    <div class="main">
     <!-- HEADER & NAVIGATION -->
     <header>
         <div>
@@ -26,7 +25,8 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><svg 
+                <li><button id="modeBtn">
+                    <svg 
                     id="mode" 
                     width="24" 
                     height="24" 
@@ -38,6 +38,7 @@
                     d="M24.2799 11.9968C24.2799 17.5883 20.4556 22.2866 15.2799 23.6187C14.3211 23.8655 13.3158 23.9968 12.2799 23.9968C5.65251 23.9968 0.279922 18.6242 0.279922 11.9968C0.279922 5.36938 5.65251 -0.00320435 12.2799 -0.00320435C13.3158 -0.00320435 14.3211 0.128055 15.2799 0.374848C20.4556 1.70698 24.2799 6.40528 24.2799 11.9968Z" 
                     fill="#e5ff66"/>
                     </svg>
+                </button>
                 </li>
             </ul>
             <button id="hamburger">
@@ -75,7 +76,7 @@
                     <p>I am a web developer with a background in UI and graphic design. I build websites that are:</p>
                     <div class="website-qualities">
                         <div class="website-quality">
-                            <h4>Well designed</h4>
+                            <h4>Well-designed</h4>
                             <hr>
                             <p>With over a decade of design experience on marketing teams and in freelance, I am comfortable in both the design and development worlds.</p>
                         </div>
@@ -92,7 +93,7 @@
                     </div>
                     <div class="contact-jump-link">
                         <p class="centered">Want to work together? Send me a message!</p>
-                        <a href="#contact"><button class="styled-button contact-button">Contact me</button></a>
+                        <a href="#contact"><div class="styled-btn contact-btn">Contact me</div></a>
                     </div>
                 </div>
             </section>
@@ -120,7 +121,9 @@
                             <hr>
                             <h3>Broadway Perio</h3>
                             <p class="skills"><span class="skill">Design</span><span class="skill">Wordpress</span><span class="skill">Branding</span><span class="skill">Javascript</span></p>
-                            <a href="https://broadwayperio.com" target="_blank"><button class="styled-button" type="button">Check it out</button></a>
+                            <div class="btn-container">
+                                <a href="https://broadwayperio.com" target="_blank"><div class="styled-btn">Check it out</div></a>
+                            </div>
                             
                         </div>
                         <div class="computer">
@@ -144,7 +147,9 @@
                             <hr>
                             <h3>Guitar Store</h3>
                             <p class="skills"><span class="skill">Java</span><span class="skill">SQL</span><span class="skill">Swing</span><span class="skill">UI Design</span></p>
-                            <a href="https://github.com/sroemermann/java-project" target="_blank"><button class="styled-button" type="button">Check it out</button></a>
+                            <div class="btn-container">
+                                <a href="https://github.com/sroemermann/java-project" target="_blank"><div class="styled-btn">Check it out</div></a>
+                            </div>
                         </div>
                     </div>
                     
@@ -164,7 +169,7 @@
                         <div class="contact-info">
                             <p>Get in touch:</p>
                             <p id="contact-email" aria-hidden="true"><a href="mailto:roemermann.steven@gmail.com">email</a></p>
-                            <button class="styled-button" onclick="copyEmail()" type="button">Copy email</button><span id="copied"></span>
+                            <button onclick="copyEmail()" type="button">Copy email</button><span id="copied"></span>
                             <p class="social-icons">
                             <a href="https://www.linkedin.com/in/sroemermann/" target="_blank" class="social-links"><i class="fa-brands fa-linkedin"></i></a>
                             <a href="https://github.com/sroemermann" target="_blank" class="social-links"><i class="fa-brands fa-github"></i></a>
@@ -193,6 +198,5 @@
             
         
 
-    </div>
 </body>
 </html>
