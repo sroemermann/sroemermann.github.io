@@ -13,11 +13,10 @@
 
 :root.light-mode {
   --primary: #28a1a1;
-  /* --primary: #489689; */
-  --body-color: #313459;
+  --body-color: #494c67;
   --bg-color: #f6f6f6;
   --bg-color2: #ffffff;
-  --grad1: #bba6fb;
+  --grad1: #c99fff;
   --grad2: #5633c9;
 }
 
@@ -66,7 +65,7 @@ hr {
   margin: 1rem 0 2rem;
 }
 
-.thick {
+hr.thick {
   border: none;
   background-color: var(--primary);
   height: 0.08rem;
@@ -97,9 +96,9 @@ h3 {
   filter: drop-shadow(0.2rem 0.2rem 0.025rem var(--grad1));
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   h3 {
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
 }
 
@@ -140,12 +139,6 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-@media screen and (min-width: 800px) {
-  .skills {
-    justify-content: flex-start;
-  }
 }
 
 .skill {
@@ -317,6 +310,7 @@ svg {
    ========== */
 
 #modeBtn {
+  display: flex;
   background: none;
   border: none;
   padding: 0;
@@ -386,8 +380,8 @@ header.nav-open > nav > #hamburger .line {
 
 .mobile-nav-list {
   list-style: none;
-  font-size: 2.2rem;
-  line-height: 4rem;
+  font-size: 2rem;
+  line-height: 4.6rem;
   padding: 1rem;
 }
 
@@ -396,12 +390,6 @@ header.nav-open > nav > #hamburger .line {
   #mobile-nav {
     display: none;
   }
-}
-
-.mobile-nav-list {
-  list-style: none;
-  font-size: 2rem;
-  line-height: 4rem;
 }
 
 .mobile-nav-list > li::before {
@@ -451,7 +439,7 @@ header.nav-open > nav > #hamburger .line {
    ======= */
 
 button {
-  display: flex;
+  /* display: flex; */
   margin: 1rem 0;
   padding: 0.4rem 1.4rem;
   font-family: "Space Mono", monospace;
@@ -473,7 +461,6 @@ button:hover {
 
 .styled-btn {
   display: flex;
-  margin: 1rem 0;
   padding: 0.2rem 1.4rem;
   font-family: "Space Mono", monospace;
   background: var(--secondary);
@@ -491,9 +478,6 @@ button:hover {
 .styled-btn:hover,
 .styled-btn:focus {
   background: var(--primary);
-  /* box-shadow: 0 0.25rem 0.01rem var(--secondary), 0 0 0.4rem var(--glow); */
-  /* box-shadow: 0 0.25rem 0.01rem var(--secondary); */
-  /* transform: translateY(-0.25rem); */
   transition: all 250ms ease;
   color: var(--bg-color);
 }
@@ -503,11 +487,14 @@ button:hover {
   position: relative;
   padding: 0.4rem 2rem;
   border-radius: 6px;
-  animation: glow 5000ms alternate infinite ease-in-out;
+  animation: glow 3000ms alternate infinite ease-in-out;
 }
 
 @keyframes glow {
   0% {
+    background-color: var(--secondary);
+  }
+  40% {
     background-color: var(--secondary);
   }
   100% {
@@ -519,7 +506,7 @@ button:hover {
 .contact-btn:hover,
 .contact-btn:focus {
   animation: none;
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
   box-shadow: 0 0 0.5rem var(--glow);
 }
 
@@ -540,13 +527,14 @@ button:hover {
 
 .contact-btn:hover::after {
   background: var(--primary);
-  transform: perspective(5em) rotateX(35deg);
+  /* transform: perspective(5em) rotateX(35deg); */
   opacity: 1;
   transition: all 350ms ease;
 }
 
 .btn-container {
   display: flex;
+  margin: 1rem 0;
   justify-content: center;
 }
 
@@ -602,15 +590,13 @@ button:hover {
   transform: scale(1.2);
 }
 
-/* @media screen and (max-width: 800px) {
-  .background,
-  .background-gradient {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-  }
-} */
+.background.fixed,
+.background-gradient.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
 
 .stars {
   position: relative;
@@ -859,6 +845,7 @@ button:hover {
   color: var(--body-color);
   text-align: center;
   font-size: 2rem;
+  line-height: 1.5;
   font-style: italic;
 }
 
@@ -897,7 +884,7 @@ button:hover {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   .website-section {
     flex-direction: row;
   }
@@ -910,7 +897,7 @@ button:hover {
   margin: 0 auto;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   .website-description {
     margin: 2rem;
     width: 30vw;
@@ -919,6 +906,10 @@ button:hover {
   }
 
   .website-description > div.btn-container {
+    justify-content: flex-start;
+  }
+
+  .website-description > .skills {
     justify-content: flex-start;
   }
 }
@@ -1086,10 +1077,11 @@ button:hover {
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
+  color: #ffffff;
 }
 
-.work-description > .skills {
-  justify-content: center;
+.work-description > hr {
+  background-color: #ffffff;
 }
 
 /* ===============

@@ -32,7 +32,6 @@ links.forEach(l => {
     });
 
 
-
 // Close mobile menu if window resized > 800px
 
 onresize = (event) => {
@@ -48,7 +47,7 @@ onresize = (event) => {
 
 const moonPath = "M7.21127 12C7.21127 21.1636 16 23.4843 16 23.4843C14.8591 23.8197 13.6485 24 12.3944 24C5.54915 24 0 18.6274 0 12C0 5.37258 5.54915 0 12.3944 0C13.6485 0 14.8591 0.180332 16 0.515673C16 0.515673 7.21127 2.83636 7.21127 12Z";
 const sunPath = "M24.2799 11.9968C24.2799 17.5883 20.4556 22.2866 15.2799 23.6187C14.3211 23.8655 13.3158 23.9968 12.2799 23.9968C5.65251 23.9968 0.279922 18.6242 0.279922 11.9968C0.279922 5.36938 5.65251 -0.00320435 12.2799 -0.00320435C13.3158 -0.00320435 14.3211 0.128055 15.2799 0.374848C20.4556 1.70698 24.2799 6.40528 24.2799 11.9968Z";
-const mode = document.getElementById("mode");
+const mode = document.getElementById("modeBtn");
 const modeMobile = document.getElementById("light-mode-mobile");
 const root = document.documentElement;
 let modeToggle = false;
@@ -63,7 +62,7 @@ const toggleDarkMode = function() {
         d: [
             {value: modeToggle ? sunPath : moonPath}
         ],
-        fill: modeToggle ? "#e5ff66" : "#debd00"
+        fill: modeToggle ? "#e3da4e" : "#debd00"
     })
     .add({
         targets: "#mode",
@@ -89,40 +88,29 @@ modeMobile.addEventListener("click", toggleDarkMode);
 
 // Hero parallax scroll effect
 
-
-
 const bg = document.getElementById("background");
 const louis = document.getElementById("louis");
 const bgg = document.getElementById("bg-g");
 const ship = document.getElementById("space-ship");
 const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+let w = window.innerWidth;
 
 if (!mediaQuery || mediaQuery.matches) {
     bg.style.top = 0;
     louis.style.top = 0;
     bgg.style.top = 0;  
     ship.style.top = 0; 
+} else if (w < 600) {
+    bg.classList.add("fixed");
+    bgg.classList.add("fixed");
 } else {
     window.addEventListener("scroll", function() {
         const value = this.window.scrollY;
-        let w = window.innerWidth;
 
         bg.style.top = value * 1.04 + "px";
         louis.style.top = value * 0.75 + "px";
         bgg.style.top = value * 1 + "px";
         ship.style.top = value * 0.9 + "px";
-
-        // if (w > 800) {
-        //     bg.style.top = value * 1.04 + "px";
-        //     louis.style.top = value * 0.75 + "px";
-        //     bgg.style.top = value * 1 + "px";
-        //     ship.style.top = value * 0.9 + "px";
-        // } else {
-        //     bg.style.top = 0;
-        //     louis.style.top = 0;
-        //     bgg.style.top = 0;  
-        //     ship.style.top = 0; 
-        // }
     })
 
 }
@@ -158,32 +146,4 @@ const copyEmail = function () {
 // Add email address to page
 
 document.getElementById("contact-email").innerHTML = "roemermann.steven@gmail.com";
-
-
-// Broadway Perio screen slideshow
-
-// const screen = document.getElementById("bp-screen");
-// const images = [];
-// const slideTime = 3000;
-// let i = 0;
-
-// images[0] = 'img/computer/java-code.jpg';
-// images[1] = 'img/computer/java-code.jpg';
-// images[2] = 'img/computer/bp-hero.jpg';
-
-// function changePicture() {
-//     screen.style.backgroundImage = "url(" + images[i] + ")";
-
-//     if (i < images.length - 1) {
-//         i++;
-//         screen.classList.add("fadeOut");
-//     } else {
-//         i = 0;
-//         console.log(i);
-//     }
-
-//     setTimeout("changePicture()", slideTime);
-// }
-
-// window.onload = changePicture;
 
