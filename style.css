@@ -695,7 +695,6 @@ button:hover {
 @media screen and (min-width: 600px) {
   #space-ship {
     left: 5%;
-    width: 1000px;
     height: 100%;
   }
 }
