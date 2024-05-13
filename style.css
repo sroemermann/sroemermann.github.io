@@ -439,7 +439,6 @@ header.nav-open > nav > #hamburger .line {
    ======= */
 
 button {
-  /* display: flex; */
   margin: 1rem 0;
   padding: 0.4rem 1.4rem;
   font-family: "Space Mono", monospace;
@@ -488,6 +487,7 @@ button:hover {
   padding: 0.4rem 2rem;
   border-radius: 6px;
   animation: glow 3000ms alternate infinite ease-in-out;
+  transition: all 350ms ease;
 }
 
 @keyframes glow {
@@ -498,7 +498,6 @@ button:hover {
     background-color: var(--secondary);
   }
   100% {
-    /* background-color: #b01cfa; */
     background-color: var(--grad1);
   }
 }
@@ -506,7 +505,6 @@ button:hover {
 .contact-btn:hover,
 .contact-btn:focus {
   animation: none;
-  /* background-color: var(--primary); */
   box-shadow: 0 0 0.5rem var(--glow);
 }
 
@@ -527,7 +525,6 @@ button:hover {
 
 .contact-btn:hover::after {
   background: var(--primary);
-  /* transform: perspective(5em) rotateX(35deg); */
   opacity: 1;
   transition: all 350ms ease;
 }
@@ -773,7 +770,6 @@ button:hover {
 @media screen and (min-width: 1100px) {
   .website-qualities {
     grid-template-columns: repeat(3, 1fr);
-    /* gap: 2rem; */
   }
 }
 
@@ -938,7 +934,6 @@ button:hover {
   flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
-  /* aspect-ratio: 16 / 9; */
   width: 100%;
   height: 90%;
   z-index: 1;
@@ -1030,22 +1025,6 @@ button:hover {
 
 /* JAVA APPLICATION SECTION */
 
-/*
-.website-description {
-  text-align: center;
-  top: 0;
-  z-index: 50;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 1200px) {
-  .website-description {
-    margin: 2rem;
-    width: 30vw;
-    text-align: left;
-    max-width: 430px;
-  } */
-
 .java-section {
   color: #ffffff;
   padding: 3rem 0;
@@ -1107,7 +1086,6 @@ button:hover {
 .contact {
   min-height: 60vh;
   width: 100%;
-  /* max-width: 1200px; */
   padding: 0rem;
   display: flex;
   flex-direction: column;
@@ -1172,7 +1150,7 @@ button:hover {
   margin: 0;
   cursor: pointer;
   transition: all 500ms ease;
-  color: var(--body-color);
+  color: var(--primary);
 }
 
 #contact-email::after {
@@ -1185,7 +1163,7 @@ button:hover {
   transform: scale(0, 1);
   bottom: 0.4rem;
   left: 0;
-  background-color: var(--body-color);
+  background-color: var(--primary);
   transition: all 500ms ease;
 }
 
@@ -1207,13 +1185,13 @@ button:hover {
 #contact-email:hover {
   filter: drop-shadow(0 0 0.15em var(--glow));
   transition: all 500ms ease;
-  color: var(--primary);
+  color: var(--body-color);
 }
 
 #contact-email:hover::after {
   transition: all 250ms ease;
   transform: scale(1, 1);
-  background-color: var(--primary);
+  background-color: var(--body-color);
 }
 
 #copied {
